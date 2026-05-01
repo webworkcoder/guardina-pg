@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./layout/navbar";
 import SmoothScroll from "@/components/SmoothScroll";
+import { Footer } from "./layout/footer";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -26,6 +27,7 @@ export default function RootLayout({
         <body className="min-h-full flex flex-col font-poppins  bg-gradient-to-r from-white via-yellow-50 to-orange-50">
           <Navbar />
           {children}
+          <Footer />
         </body>
       </SmoothScroll>
     </html>
