@@ -1,9 +1,12 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
+
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const data = [
   { id: "1", label: "Home", path: "/" },
@@ -14,62 +17,162 @@ const data = [
   { id: "6", label: "Contact", path: "/contact" },
 ];
 
+const menuVariants = {
+  hidden: { x: "-100%" },
+  visible: {
+    x: 0,
+    transition: { type: "spring", stiffness: 80, damping: 18 },
+  },
+  exit: {
+    x: "-100%",
+    transition: { duration: 0.3 },
+  },
+};
+
+const overlayVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+  exit: { opacity: 0 },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.08,
+      duration: 0.4,
+      ease: "easeOut",
+    },
+  }),
+};
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
   return (
-    <nav className="flex items-center justify-between p-3 border-b shadow px-4 lg:px-8">
-      <Image src="/pg.png" height={160} width={120} alt="logo" />
+    <nav className="flex items-center justify-between p-3 px-4 md:px-8 bg-gradient-to-r from-white via-yellow-50 to-orange-50">
+      {/* Logo */}
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+        <Image src="/pg.png" height={160} width={120} alt="logo" />
+      </motion.div>
 
       {/* Desktop Menu */}
       <div className="hidden lg:flex items-center gap-6">
         {data.map((item) => (
-          <Link
+          <motion.div
             key={item.id}
-            href={item.path}
-            className={`transition duration-200 ${pathname === item.path ? "text-[#13540c] font-semibold" : "text-black"}`}
+            whileHover={{ y: -2 }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
-            {item.label}
-          </Link>
+            <Link
+              href={item.path}
+              className={`transition ${
+                pathname === item.path
+                  ? "text-[#13540c] font-semibold"
+                  : "text-gray-800 hover:text-[#13540c]"
+              }`}
+            >
+              {item.label}
+            </Link>
+          </motion.div>
         ))}
       </div>
 
+      {/* Desktop Button */}
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="px-8 py-2 rounded-full hidden lg:block
+        bg-gradient-to-r from-green-300 to-green-500
+        text-black font-semibold shadow-sm"
+      >
+        Book Now
+      </motion.button>
+
       {/* Mobile Icon */}
       <Menu
-        size={24}
+        size={26}
         className="lg:hidden cursor-pointer"
         onClick={() => setOpen(true)}
       />
 
       {/* Mobile Menu */}
-      {open && (
-        <div className="fixed inset-0 bg-white z-50">
-          {/* Top bar */}
-          <div className="flex items-center justify-between px-4 py-3 border-b">
-            <Image src="/pg.png" height={160} width={120} alt="logo" />
-            <X
-              size={24}
-              className="cursor-pointer bg-[#13540C] text-white rounded-full"
+      <AnimatePresence>
+        {open && (
+          <motion.div className="fixed inset-0 z-50">
+            {/* Overlay */}
+            <motion.div
+              variants={overlayVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              className="absolute inset-0 bg-black/30 backdrop-blur-sm"
               onClick={() => setOpen(false)}
             />
-          </div>
 
-          {/* Menu Items */}
-          <div className="flex flex-col items-center gap-6 text-5xl italic justify-center h-full">
-            {data.map((item) => (
-              <Link
-                key={item.id}
-                href={item.path}
-                onClick={() => setOpen(false)}
-                className={`transition duration-200 ${pathname === item.path ? "text-[#13540c] font-semibold" : "text-black"}`}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      )}
+            {/* Sliding Panel */}
+            <motion.div
+              variants={menuVariants as any}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              className="absolute right-0 top-0 h-full w-full 
+              bg-gradient-to-br from-white via-yellow-50 to-orange-50"
+            >
+              {/* Top bar */}
+              <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200">
+                <Image src="/pg.png" height={160} width={120} alt="logo" />
+                <X
+                  size={26}
+                  className="cursor-pointer bg-[#13540C] text-white rounded-full p-1"
+                  onClick={() => setOpen(false)}
+                />
+              </div>
+
+              {/* Menu Items */}
+              <div className="flex flex-col items-center justify-center h-[70%] gap-8 text-4xl italic">
+                {data.map((item, i) => (
+                  <motion.div
+                    key={item.id}
+                    custom={i}
+                    variants={itemVariants as any}
+                    initial="hidden"
+                    animate="visible"
+                  >
+                    <Link
+                      href={item.path}
+                      onClick={() => setOpen(false)}
+                      className={`${
+                        pathname === item.path
+                          ? "text-[#13540c] font-semibold"
+                          : "text-gray-700 hover:text-[#13540c]"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* CTA */}
+              <div className="flex justify-center px-4">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-3 rounded-full w-full
+                  bg-gradient-to-r from-green-300 to-green-500
+                  text-black font-semibold shadow-md"
+                >
+                  Book Now
+                </motion.button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

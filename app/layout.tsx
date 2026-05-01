@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./layout/navbar";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-poppins",
 });
-
 
 export const metadata: Metadata = {
   title: "Guardian Pg",
@@ -22,10 +22,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={` ${poppins.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-poppins">
-        <Navbar />
-        {children}
-      </body>
+      <SmoothScroll>
+        <body className="min-h-full flex flex-col font-poppins  bg-gradient-to-r from-white via-yellow-50 to-orange-50">
+          <Navbar />
+          {children}
+        </body>
+      </SmoothScroll>
     </html>
   );
 }
