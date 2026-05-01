@@ -150,7 +150,7 @@ export const HeroSection = () => {
               </motion.p>
 
               {/* Button */}
-              <motion.div
+              {/* <motion.div
                 variants={{
                   hidden: { opacity: 0, y: 20 },
                   visible: { opacity: 1, y: 0 },
@@ -168,7 +168,7 @@ export const HeroSection = () => {
                 >
                   Book Your Stay
                 </motion.button>
-              </motion.div>
+              </motion.div> */}
             </motion.div>
           </AnimatePresence>
         </div>
@@ -200,7 +200,7 @@ export const HeroSection = () => {
           whileHover={{ scale: 1.2 }}
           whileTap={{ scale: 0.9 }}
           onClick={prevSlide}
-          className="pointer-events-auto p-2  bg-black backdrop-blur-md text-white  cursor-pointer transition"
+          className="pointer-events-auto p-2 rounded-full  bg-black backdrop-blur-md text-white  cursor-pointer transition"
         >
           <ArrowLeft size={18} />
         </motion.button>
@@ -209,7 +209,7 @@ export const HeroSection = () => {
           whileHover={{ scale: 1.2 }}
           whileTap={{ scale: 0.9 }}
           onClick={nextSlide}
-          className="pointer-events-auto p-2  bg-black backdrop-blur-md text-white  cursor-pointer transition"
+          className="pointer-events-auto p-2 rounded-full bg-black backdrop-blur-md text-white  cursor-pointer transition"
         >
           <ArrowRight size={18} />
         </motion.button>
