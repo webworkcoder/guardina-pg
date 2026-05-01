@@ -17,6 +17,7 @@ const data = [
   { id: "6", label: "Contact", path: "/contact" },
 ];
 
+// Drawer animation
 const menuVariants = {
   hidden: { x: "-100%" },
   visible: {
@@ -29,12 +30,14 @@ const menuVariants = {
   },
 };
 
+// Overlay fade
 const overlayVariants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1 },
   exit: { opacity: 0 },
 };
 
+// Menu item animation
 const itemVariants = {
   hidden: { opacity: 0, y: 40 },
   visible: (i: number) => ({
@@ -53,7 +56,7 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="flex items-center justify-between p-3 px-4 md:px-8 bg-gradient-to-r from-white via-yellow-50 to-orange-50">
+    <nav className="flex items-center justify-between p-3 px-4 md:px-8 bg-gradient-to-r from-white via-yellow-50 to-orange-50 sticky top-0 z-30">
       {/* Logo */}
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
         <Image src="/pg.png" height={160} width={120} alt="logo" />
@@ -81,7 +84,7 @@ const Navbar = () => {
         ))}
       </div>
 
-      {/* Desktop Button */}
+      {/* Desktop CTA */}
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
@@ -99,7 +102,7 @@ const Navbar = () => {
         onClick={() => setOpen(true)}
       />
 
-      {/* Mobile Menu */}
+      {/* Mobile Drawer */}
       <AnimatePresence>
         {open && (
           <motion.div className="fixed inset-0 z-50">
@@ -109,18 +112,19 @@ const Navbar = () => {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="absolute inset-0 bg-black/30 backdrop-blur-sm"
+              className="absolute inset-0 bg-black/40 backdrop-blur-sm z-40"
               onClick={() => setOpen(false)}
             />
 
-            {/* Sliding Panel */}
+            {/* Drawer Panel */}
             <motion.div
               variants={menuVariants as any}
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="absolute right-0 top-0 h-full w-full 
-              bg-gradient-to-br from-white via-yellow-50 to-orange-50"
+              className="absolute left-0 top-0 h-full w-[100%] 
+              bg-gradient-to-br from-white via-yellow-50 to-orange-50
+              shadow-2xl border-r border-gray-200 z-50"
             >
               {/* Top bar */}
               <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200">
@@ -133,7 +137,7 @@ const Navbar = () => {
               </div>
 
               {/* Menu Items */}
-              <div className="flex flex-col items-center justify-center h-[70%] gap-8 text-4xl italic">
+              <div className="flex flex-col items-center justify-center h-[70%] gap-8 text-3xl italic">
                 {data.map((item, i) => (
                   <motion.div
                     key={item.id}
@@ -158,7 +162,7 @@ const Navbar = () => {
               </div>
 
               {/* CTA */}
-              <div className="flex justify-center px-4">
+              <div className="flex justify-center px-4 pb-6">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
