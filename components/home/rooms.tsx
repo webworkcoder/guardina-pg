@@ -1,40 +1,11 @@
+"use client";
+import { usePathname } from "next/navigation";
 import FeatureBar from "../shared/FeatureBar";
 import RoomCard from "../shared/RoomCard";
+import { roomData } from "../data/roomData";
 
 export const Rooms = () => {
-  const roomData = [
-    {
-      category: "Luxury Room",
-      price: 150,
-      title: "Standard Rooms",
-      rating: "4.9",
-      bed: 1,
-      bath: 1,
-      sqft: 300,
-      image: "/pg2.jpg",
-    },
-    {
-      category: "Luxury Room",
-      price: 250,
-      title: "Deluxe Rooms",
-      rating: "5.0",
-      bed: 1,
-      bath: 2,
-      sqft: 400,
-      image: "/pg2.jpg",
-    },
-    {
-      category: "Luxury Suites",
-      price: 450,
-      title: "The Pearl Suite",
-      rating: "4.9",
-      bed: 2,
-      bath: 2,
-      sqft: 700,
-      image: "/pg2.jpg",
-    },
-  ];
-
+  const pathname = usePathname();
   return (
     <>
       <section className="py-10 relative overflow-hidden">
@@ -74,9 +45,13 @@ export const Rooms = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {roomData.map((room, index) => (
-              <RoomCard key={index} {...room} />
-            ))}
+            {pathname === "/"
+              ? roomData
+                  .slice(0, 3)
+                  .map((room, index) => <RoomCard key={index} {...room} />)
+              : roomData.map((room, index) => (
+                  <RoomCard key={index} {...room} />
+                ))}
           </div>
         </div>
       </section>

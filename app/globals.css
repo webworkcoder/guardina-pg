@@ -128,3 +128,20 @@
     @apply font-sans;
   }
 }
+
+@layer base {
+  /* Chrome, Safari aur newer Edge ke liye */
+  .custom-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Firefox ke liye */
+  .custom-scrollbar {
+    scrollbar-width: none;
+  }
+
+  /* IE aur Edge (Legacy) ke liye */
+  .custom-scrollbar {
+    -ms-overflow-style: none;
+  }
+}

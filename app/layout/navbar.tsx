@@ -58,9 +58,11 @@ const Navbar = () => {
   return (
     <nav className="flex items-center justify-between p-3 px-4 md:px-8 bg-gradient-to-r from-white via-yellow-50 to-orange-50 sticky top-0 z-30">
       {/* Logo */}
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-        <Image src="/pg.png" height={160} width={120} alt="logo" />
-      </motion.div>
+      <Link href={"/"}>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+          <Image src="/pg.png" height={160} width={120} alt="logo" />
+        </motion.div>
+      </Link>
 
       {/* Desktop Menu */}
       <div className="hidden lg:flex items-center gap-6">
