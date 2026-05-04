@@ -20,7 +20,6 @@ export default async function RoomDetailsPage({
   return (
     <>
       <main>
-        {/* Dynamic Banner */}
         <Banners
           title={room.title}
           currentPage={room.title}
