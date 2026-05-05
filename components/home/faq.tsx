@@ -59,12 +59,12 @@ export const FaqSection = () => {
                   <path
                     d="M0 10 Q 25 0 50 10 T 100 10"
                     fill="none"
-                    stroke="#E6AC6F"
+                    stroke="#1B5E20"
                     strokeWidth="2"
                   />
                 </svg>
               </div>
-              <span className="text-[#E6AC6F] uppercase tracking-[0.4em] font-bold text-xs">
+              <span className="text-[#1B5E20] uppercase tracking-[0.4em] font-bold text-xs">
                 Faqs
               </span>
             </div>
@@ -83,7 +83,7 @@ export const FaqSection = () => {
                     key={index}
                     className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
                       isOpen
-                        ? "bg-[#2C4A42] border-[#2C4A42]"
+                        ? "bg-[#1B5E20] border-[#1B5E20]"
                         : "bg-white border-slate-100"
                     }`}
                   >
@@ -125,7 +125,7 @@ export const FaqSection = () => {
             {/* Right Side Sidebar */}
             <div className="space-y-6">
               {/* Contact Card */}
-              <div className="bg-[#2C4A42] rounded-2xl p-8 text-center space-y-6 text-white relative overflow-hidden">
+              <div className="bg-[#1B5E20] rounded-2xl p-8 text-center space-y-6 text-white relative overflow-hidden">
                 {/* Small Chat Icon Style Decoration */}
                 <div className="flex justify-center">
                   <div className="w-16 h-16 bg-[#E6AC6F]/10 rounded-full flex items-center justify-center">
@@ -133,7 +133,7 @@ export const FaqSection = () => {
                       width="40"
                       height="40"
                       viewBox="0 0 24 24"
-                      fill="#E6AC6F"
+                      fill="#ffffff"
                       className="opacity-90"
                     >
                       <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
@@ -151,7 +151,7 @@ export const FaqSection = () => {
                   </p>
                 </div>
 
-                <button className="w-full py-2 px-4 bg-[#E6AC6F] text-[#1A1A1A] font-bold rounded-2xl hover:bg-[#d49b5f] transition-all">
+                <button className="w-full py-2 px-4 bg-white text-[#1A1A1A] font-bold rounded-2xl hover:bg-[#d49b5f] transition-all">
                   Contact Us
                 </button>
               </div>
@@ -175,15 +175,6 @@ export const FaqSection = () => {
           </div>
         </div>
       </section>
-      <FeatureBar
-        features={[
-          "Breakfast Included",
-          "Swimming Pool",
-          "High Speed Wifi",
-          "Spa & Wellness",
-        ]}
-        duration={10}
-      />
     </>
   );
 };

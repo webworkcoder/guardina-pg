@@ -5,7 +5,6 @@ import { FacilityCard } from "../shared/FacilityCard";
 import FeatureBar from "../shared/FeatureBar";
 
 export const Facilities = () => {
-  // Default 0 index active rahega
   const [activeIndex, setActiveIndex] = useState(0);
 
   const facilitiesData = [
@@ -59,7 +58,7 @@ export const Facilities = () => {
         <div className="px-4 md:px-8 relative z-10">
           <div className="mb-16 space-y-3">
             <div className="flex items-center gap-2">
-              <div className="text-[#2C4A42]">
+              <div className="text-[#1B5E20]">
                 <svg
                   width="40"
                   height="18"
@@ -74,7 +73,7 @@ export const Facilities = () => {
                   />
                 </svg>
               </div>
-              <span className="text-orange-500 uppercase tracking-[0.3em] font-bold text-sm">
+              <span className="text-[#1B5E20] uppercase tracking-[0.3em] font-bold text-sm">
                 Hotel Facilities
               </span>
             </div>

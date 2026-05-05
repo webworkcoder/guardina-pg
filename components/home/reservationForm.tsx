@@ -24,17 +24,18 @@ export const ReservationForm = () => {
                   <path
                     d="M0 10 Q 25 0 50 10 T 100 10"
                     fill="none"
-                    stroke="#E6AC6F"
+                    stroke="#1B5E20"
                     strokeWidth="2"
                   />
                 </svg>
               </div>
-              <span className="text-[#E6AC6F] uppercase tracking-[0.4em] font-bold text-xs md:text-sm">
+              <span className="text-[#1B5E20] uppercase tracking-[0.4em] font-bold text-xs md:text-sm">
                 Make a Reservation
               </span>
             </div>
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif text-[#1A1A1A] max-w-3xl mx-auto leading-tight">
-              Book Your Stay and Enjoy Exceptional Comfort
+              Book <span className="text-[#1B5E20]">Your Stay</span> and Enjoy
+              Exceptional Comfort
             </h2>
           </div>
 
@@ -132,7 +133,7 @@ export const ReservationForm = () => {
                 ))}
 
                 <div className="md:col-span-2 pt-4">
-                  <button className="bg-[#2C4A42] text-white px-8 py-3  rounded-full  hover:bg-[#1f352f] transition-all shadow-xl text-sm md:text-base uppercase tracking-widest w-full">
+                  <button className="bg-[#1B5E20] text-white px-8 py-3  rounded-full  hover:bg-[#1f352f] transition-all shadow-xl text-sm md:text-base uppercase tracking-widest w-full">
                     Book Now
                   </button>
                 </div>

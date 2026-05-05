@@ -26,7 +26,7 @@ const FeatureBar = ({ features, duration = 20, className = "" }: any) => {
 
   return (
     <div
-      className={`w-full bg-[#2C4A42] overflow-hidden py-5 my-10 border-y border-white/10 ${className}`}
+      className={`w-full bg-[#1B5E20] overflow-hidden py-5 my-10 border-y border-white/10 ${className}`}
     >
       <motion.div
         className="flex whitespace-nowrap items-center"

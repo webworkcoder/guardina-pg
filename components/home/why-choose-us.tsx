@@ -31,7 +31,7 @@ export const WhyChooseUs: React.FC = () => {
           {/* Header Section */}
           <div className="text-center mb-12 md:mb-20 space-y-4">
             <div className="flex flex-col items-center gap-2">
-              <div className="text-[#2C4A42]">
+              <div className="text-[#1B5E20]">
                 <svg
                   width="60"
                   height="20"
@@ -46,7 +46,7 @@ export const WhyChooseUs: React.FC = () => {
                   />
                 </svg>
               </div>
-              <span className="text-[#E6AC6F] uppercase tracking-[0.4em] font-bold text-xs md:text-sm">
+              <span className="text-[#1B5E20] uppercase tracking-[0.4em] font-bold text-xs md:text-sm">
                 Why Choose Us
               </span>
             </div>
@@ -70,12 +70,12 @@ export const WhyChooseUs: React.FC = () => {
                   className="object-cover"
                 />
 
-                <div className="absolute bottom-4 left-4 right-4 md:bottom-8 md:left-8 md:right-8 bg-[#2C4A42] p-3 md:p-5 rounded-2xl flex items-center gap-3 md:gap-5 text-white shadow-xl z-20">
+                <div className="absolute bottom-4 left-4 right-4 md:bottom-8 md:left-8 md:right-8 bg-[#1B5E20] p-3 md:p-5 rounded-2xl flex items-center gap-3 md:gap-5 text-white shadow-xl z-20">
                   <div className="flex -space-x-3">
                     {[1, 2, 3].map((i) => (
                       <div
                         key={i}
-                        className="w-8 h-8 md:w-12 md:h-12 rounded-full border-2 border-[#2C4A42] bg-slate-200 overflow-hidden relative"
+                        className="w-8 h-8 md:w-12 md:h-12 rounded-full border-2 border-[#1B5E20] bg-slate-200 overflow-hidden relative"
                       >
                         <Image
                           src={`/pg.png`}
@@ -85,9 +85,7 @@ export const WhyChooseUs: React.FC = () => {
                         />
                       </div>
                     ))}
-                    <div className="w-8 h-8 md:w-12 md:h-12 rounded-full border-2 border-[#2C4A42] bg-[#E6AC6F] flex items-center justify-center text-[10px] md:text-xs font-bold">
-                      +
-                    </div>
+                 
                   </div>
                   <div>
                     <p className="font-bold text-sm md:text-xl leading-none">
@@ -132,7 +130,7 @@ export const WhyChooseUs: React.FC = () => {
                     key={i}
                     className="flex-1 text-center border-r last:border-0 border-slate-100 px-2"
                   >
-                    <h4 className="text-2xl md:text-4xl font-serif font-bold text-[#2C4A42]">
+                    <h4 className="text-2xl md:text-4xl font-serif font-bold text-[#1B5E20]">
                       {stat.value}
                     </h4>
                     <p className="text-slate-500 text-[10px] md:text-sm uppercase tracking-wider uppercase font-semibold">
@@ -163,7 +161,7 @@ export const WhyChooseUs: React.FC = () => {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="bg-[#2C4A42] text-white px-8 py-3  rounded-full font-bold hover:bg-[#1f352f] transition-all shadow-xl text-sm md:text-base uppercase tracking-widest"
+                  className="bg-[#1B5E20] text-white px-8 py-3  rounded-full font-bold hover:bg-[#1f352f] transition-all shadow-xl text-sm md:text-base uppercase tracking-widest"
                 >
                   Known More
                 </motion.button>

@@ -73,12 +73,13 @@ export const Testimonials: React.FC = () => {
           {/* Header Section */}
           <div className="text-center mb-16 space-y-4">
             <div className="flex flex-col items-center gap-2">
-              <span className="text-[#E6AC6F] uppercase tracking-[0.4em] font-bold text-sm">
+              <span className="text-[#1B5E20] uppercase tracking-[0.4em] font-bold text-sm">
                 Guest Reviews
               </span>
             </div>
             <h2 className="text-4xl md:text-6xl font-serif text-[#1A1A1A] max-w-4xl mx-auto leading-tight">
-              What Our Satisfied Guests Are Saying
+              What Our <span className="text-[#1B5E20]">Satisfied Guests</span>{" "}
+              Are Saying
             </h2>
           </div>
 
@@ -126,8 +127,8 @@ export const Testimonials: React.FC = () => {
                             <Star
                               key={i}
                               size={20}
-                              fill="#E6AC6F"
-                              color="#E6AC6F"
+                              fill="yellow"
+                              className="text-yellow-400"
                             />
                           ))}
                         </div>
@@ -137,7 +138,7 @@ export const Testimonials: React.FC = () => {
                       </div>
 
                       <div className="space-y-3">
-                        <h3 className="text-2xl font-serif font-bold text-[#1A1A1A]">
+                        <h3 className="text-2xl font-serif font-bold text-[#1B5E20]">
                           {item.title}
                         </h3>
                         <p className="text-slate-500 leading-relaxed text-base italic">
@@ -155,10 +156,10 @@ export const Testimonials: React.FC = () => {
                           />
                         </div>
                         <div>
-                          <h4 className="text-lg font-bold text-[#1A1A1A]">
+                          <h4 className="text-lg font-bold text-[#1B5E20]">
                             {item.name}
                           </h4>
-                          <p className="text-[#E6AC6F] font-medium text-xs">
+                          <p className="text-slate-500 font-medium text-xs">
                             {item.role}
                           </p>
                         </div>
@@ -180,7 +181,7 @@ export const Testimonials: React.FC = () => {
             .swiper-pagination-bullet {
             width: 8px;
             height: 8px;
-            background: #cbd5e1;
+            background: #1b5e20;
             opacity: 1;
             border-radius: 9999px;
             transition: all 0.3s ease;

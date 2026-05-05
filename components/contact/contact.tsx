@@ -1,8 +1,6 @@
-import React from "react";
 import { Banners } from "../shared/banners";
 import { ReservationForm } from "../home/reservationForm";
 import { LocationInfo } from "../shared/location-info";
-import FeatureBar from "../shared/FeatureBar";
 
 interface BannerProps {
   title?: string;

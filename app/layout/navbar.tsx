@@ -90,8 +90,8 @@ const Navbar = () => {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         className="px-8 py-2 rounded-full hidden lg:block
-        bg-gradient-to-r from-green-300 to-green-500
-        text-black font-semibold shadow-sm"
+        bg-[#1B5E20]
+        text-white font-semibold shadow-sm"
       >
         Book Now
       </motion.button>
@@ -152,7 +152,7 @@ const Navbar = () => {
                       onClick={() => setOpen(false)}
                       className={`${
                         pathname === item.path
-                          ? "text-[#13540c] font-semibold"
+                          ? "text-[#1B5E20] font-semibold"
                           : "text-gray-700 hover:text-[#13540c]"
                       }`}
                     >
@@ -168,8 +168,8 @@ const Navbar = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="px-8 py-3 rounded-full w-full
-                  bg-gradient-to-r from-green-300 to-green-500
-                  text-black font-semibold shadow-md"
+                 bg-[#1B5E20]
+                  text-white font-semibold shadow-md"
                 >
                   Book Now
                 </motion.button>

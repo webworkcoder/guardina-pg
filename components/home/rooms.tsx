@@ -19,7 +19,7 @@ export const Rooms = () => {
         <div className="px-4 md:px-8 relative z-10">
           <div className="text-center mb-16 space-y-2">
             <div className="flex justify-center mb-2">
-              <div className="text-[#2C4A42] opacity-80 flex-shrink-0">
+              <div className="text-[#1B5E20] opacity-80 flex-shrink-0">
                 <svg
                   width="60"
                   height="20"
@@ -36,7 +36,7 @@ export const Rooms = () => {
               </div>
             </div>
 
-            <span className="text-orange-500 uppercase tracking-[0.4em] font-bold text-xs md:text-sm">
+            <span className="text-[#1B5E20] uppercase tracking-[0.4em] font-bold text-xs md:text-sm">
               Rooms & Suites
             </span>
             <h2 className="text-4xl md:text-6xl font-serif text-slate-900 font-medium">

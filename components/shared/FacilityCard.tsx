@@ -24,7 +24,7 @@ export const FacilityCard: React.FC<FacilityCardProps> = ({
       whileHover={{ y: -10 }}
       className={`relative p-8 rounded-2xl border transition-all duration-700 cursor-default overflow-hidden ${
         isActive
-          ? "bg-[#2C4A42] border-[#2C4A42] text-white shadow-2xl"
+          ? "bg-[#1B5E20] border-[#1B5E20] text-white shadow-2xl"
           : "bg-white border-slate-100 text-slate-900 shadow-sm"
       }`}
     >
@@ -44,7 +44,7 @@ export const FacilityCard: React.FC<FacilityCardProps> = ({
         >
           <Icon
             className={`w-8 h-8 transition-all duration-700 ${
-              isActive ? "text-white rotate-[15deg]" : "text-orange-500"
+              isActive ? "text-white rotate-[15deg]" : "text-[#1B5E20]"
             }`}
           />
         </div>
