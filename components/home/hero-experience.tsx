@@ -1,93 +1,109 @@
 "use client";
-import { SparklesIcon } from "lucide-react";
+
+import { Sparkles } from "lucide-react";
 import Image from "next/image";
 import FeatureBar from "../shared/FeatureBar";
 
 export const HeroExperience = () => {
   return (
     <>
-      <section className="container mx-auto px-4 md:px-8 py-10">
+      <section className="container mx-auto px-4 md:px-8 py-16 bg-white">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column: Image with Badge */}
+          
+          {/* Left Column */}
           <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-xl">
+            <div className="relative rounded-2xl overflow-hidden shadow-xl group">
               <Image
                 src="/pg1.jpg"
-                alt="Hotel Receptionist"
+                alt="Guardian Premium Living"
                 width={600}
                 height={700}
-                className="object-cover w-full h-auto"
+                className="object-cover w-full h-auto transition-transform duration-700 group-hover:scale-105"
+                priority
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
 
-            <div className="absolute -top-6 -left-4 bg-[#1B4332] text-white p-6 rounded-tr-3xl rounded-bl-3xl shadow-lg">
-              <div className="text-4xl font-bold">16</div>
+            <div className="absolute -top-6 -left-4 bg-[#1B4332] text-white p-6 rounded-tr-3xl rounded-bl-3xl shadow-lg border-b-4 border-[#22EB11] z-10">
+              <div className="text-4xl font-bold">12</div>
               <div className="text-xs uppercase tracking-widest leading-tight">
-                Years <br /> <span className="opacity-70">of Services</span>
+                Years <br /> <span className="text-[#22EB11] font-bold">of Trust</span>
               </div>
             </div>
 
-            <div className="absolute -bottom-4 -left-2 text-orange-400 text-4xl">
-              <SparklesIcon />
+            <div className="absolute -bottom-4 -left-2 text-[#22EB11] text-4xl drop-shadow-md">
+              <Sparkles />
             </div>
           </div>
 
+          {/* Right Column */}
           <div className="space-y-6">
             <div className="space-y-2">
-              <span className="text-orange-500 uppercase tracking-[0.2em] font-semibold text-sm">
-                About Us
+              <span className="text-[#22EB11] uppercase tracking-[0.2em] font-bold text-sm">
+                About Guardian
               </span>
-              <h2 className="text-4xl md:text-5xl font-serif text-slate-900 leading-tight">
-                Luxurious Comfort, <br /> Timeless Elegance Awaits
+              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
+                Where Safety Meets <br />
+                <span className="text-[#1B4332]">Grandeur Living.</span>
               </h2>
             </div>
 
-            <p className="text-slate-500 leading-relaxed max-w-md">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore.
+            <p className="text-slate-500 leading-relaxed max-w-md font-light">
+              At Guardian P.G Services, we don&apos;t just provide a room; we provide a sanctuary.
+              Our spaces are curated to offer a blend of high-end modernity and the
+              warmth of a home, secured by 24/7 elite protection.
             </p>
 
             <div className="grid grid-cols-3 gap-4 py-6 border-y border-slate-100">
               <div>
-                <div className="text-2xl font-bold text-slate-800">50+</div>
-                <div className="text-xs text-slate-400 uppercase">
-                  Luxury Rooms
-                </div>
+                <p className="text-2xl font-bold text-slate-800">85+</p>
+                <p className="text-[10px] text-[#1B4332] font-bold uppercase">
+                  Luxury Suites
+                </p>
               </div>
               <div>
-                <div className="text-2xl font-bold text-slate-800">60,000+</div>
-                <div className="text-xs text-slate-400 uppercase">
-                  Happy Guests
-                </div>
+                <p className="text-2xl font-bold text-slate-800">10k+</p>
+                <p className="text-[10px] text-[#1B4332] font-bold uppercase">
+                  Happy Tenants
+                </p>
               </div>
               <div>
-                <div className="text-2xl font-bold text-slate-800">99%</div>
-                <div className="text-xs text-slate-400 uppercase">
-                  Guest Satisfaction
-                </div>
+                <p className="text-2xl font-bold text-slate-800">100%</p>
+                <p className="text-[10px] text-[#1B4332] font-bold uppercase">
+                  Secure Zone
+                </p>
               </div>
             </div>
 
-            {/* Signature Section */}
-            <div className="pt-4">
-              <div className="font-serif text-2xl text-slate-800">
-                Jenny Alexander
+            <div className="flex items-center gap-4 pt-4">
+              <div className="h-12 w-12 rounded-full bg-[#1B4332] flex items-center justify-center text-white font-bold border-2 border-[#22EB11]">
+                GS
               </div>
-              <p className="text-sm text-slate-400">
-                Jenny Alexander • <span className="text-orange-500">Owner</span>
-              </p>
+              <div>
+                <p className="font-bold text-xl text-slate-800">Guardian Signature</p>
+                <p className="text-sm text-slate-400 font-medium">
+                  Direct Care •{" "}
+                  <span className="text-[#22EB11] font-bold uppercase text-xs">
+                    Premium Management
+                  </span>
+                </p>
+              </div>
             </div>
           </div>
+
         </div>
       </section>
+
       <FeatureBar
         features={[
-          "Breakfast Included",
-          "Swimming Pool",
-          "High Speed Wifi",
-          "Spa & Wellness",
+          "Gourmet Dining",
+          "Elite Security 24/7",
+          "High-Speed Fiber",
+          "Wellness Lounge",
+          "Biometric Access",
+          "Housekeeping Plus",
         ]}
-        duration={10}
+        duration={15}
       />
     </>
   );

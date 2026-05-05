@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { UtensilsCrossed } from "lucide-react";
 import FeatureBar from "../shared/FeatureBar";
 
 interface MenuItem {
@@ -60,101 +61,91 @@ export const Menu: React.FC = () => {
 
   return (
     <>
-      <section className="py-10 relative overflow-hidden">
-        <div className="absolute top-5 md:top-10 left-0 w-full flex justify-center pointer-events-none select-none opacity-[0.03] z-0">
-          <h1 className="text-[3rem] md:text-[10rem] font-bold text-slate-900 uppercase tracking-tighter leading-none whitespace-nowrap">
-            DINING MENU
+      <section className="py-20 relative overflow-hidden bg-white">
+        {/* Background Decorative Text */}
+        <div className="absolute top-0 left-0 w-full flex justify-center pointer-events-none select-none opacity-[0.04] z-0">
+          <h1 className="text-[5rem] md:text-[12rem] font-bold text-[#1B4332] uppercase tracking-tighter leading-none whitespace-nowrap">
+            PREMIUM DINING
           </h1>
         </div>
 
-        <div className="px-4 md:px-8 relative z-10">
-          <div className="text-center mb-10 md:mb-16 space-y-4">
-            <div className="flex flex-col items-center gap-2">
-              <div className="text-[#2C4A42]">
-                <svg
-                  width="60"
-                  height="20"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="currentColor"
-                >
-                  <path
-                    d="M8 0L9.79611 6.20389L16 8L9.79611 9.79611L8 16L6.20389 9.79611L0 8L6.20389 6.20389L8 0Z"
-                    fill="currentColor"
-                  />
-                </svg>
+        <div className="container mx-auto px-4 md:px-8 relative z-10">
+          {/* Header Section */}
+          <div className="text-center mb-16 space-y-4">
+            <div className="flex flex-col items-center gap-3">
+              <div className="bg-[#1B4332] p-3 rounded-full text-[#22EB11] shadow-lg">
+                <UtensilsCrossed size={24} />
               </div>
-              <span className="text-[#E6AC6F] uppercase tracking-[0.4em] font-bold text-xs md:text-sm">
-                PG Dining Hall
+              <span className="text-[#22EB11] uppercase tracking-[0.4em] font-bold text-xs md:text-sm">
+                Guardian Kitchen
               </span>
             </div>
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif text-[#1A1A1A] leading-tight max-w-4xl mx-auto">
-              Discover Our Delightful Menu
+            <h2 className="text-4xl md:text-6xl font-bold text-slate-900 leading-[1.1] tracking-tight max-w-3xl mx-auto">
+              Nourishing Excellence, <br />
+              <span className="text-[#1B4332]">Every Single Day.</span>
             </h2>
           </div>
 
           {/* Menu Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-8 md:gap-y-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-10">
             {menuData.map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex flex-row items-start sm:items-center gap-4 md:gap-6 group"
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="flex flex-row items-center gap-4 md:gap-8 group p-4 rounded-2xl transition-colors hover:bg-slate-50"
               >
-                {/* Image Container - Responsive sizing */}
-                <div className="relative w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 flex-shrink-0 rounded-2xl overflow-hidden shadow-md group-hover:scale-105 transition-transform duration-500">
+                {/* Image Container with Border Accent */}
+                <div className="relative w-24 h-24 sm:w-32 sm:h-32 flex-shrink-0 rounded-2xl overflow-hidden shadow-xl border-2 border-transparent group-hover:border-[#22EB11] transition-all duration-500">
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
 
                 {/* Content Area */}
-                <div className="flex-1 min-w-0 space-y-1 md:space-y-2">
-                  <div className="flex flex-wrap items-baseline justify-between gap-2">
-                    <h3 className="text-base sm:text-lg md:text-2xl font-serif font-bold text-[#1A1A1A] truncate">
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center justify-between gap-2 mb-1">
+                    <h3 className="text-lg md:text-2xl font-bold text-slate-900 truncate">
                       {item.title}
                     </h3>
-
-                    {/* Dotted Line - Hidden on very small screens to save space */}
-                    <div className="hidden sm:block flex-1 border-b-2 border-dotted border-slate-200 mx-2 min-w-[10px]" />
-
-                    <span className="text-[#2C4A42] font-serif font-bold text-sm sm:text-lg md:text-2xl whitespace-nowrap">
+                    <div className="hidden sm:block flex-1 border-b border-dashed border-slate-200 mx-3 min-w-[20px]" />
+                    <span className="text-[#1B4332] font-bold text-sm md:text-xl whitespace-nowrap">
                       {item.time}
                     </span>
                   </div>
 
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                    <p className="text-slate-500 text-xs md:text-base leading-relaxed line-clamp-2 sm:line-clamp-1 flex-1">
-                      {item.description}
-                    </p>
+                  <p className="text-slate-500 text-sm md:text-base mb-3 line-clamp-1">
+                    {item.description}
+                  </p>
 
-                    {item.tag && (
-                      <span className="inline-block self-start sm:self-center px-2 py-0.5 md:px-3 md:py-1 rounded-md border border-[#E6AC6F] text-[#E6AC6F] text-[9px] md:text-xs font-bold uppercase tracking-wider whitespace-nowrap">
-                        {item.tag}
-                      </span>
-                    )}
-                  </div>
+                  {item.tag && (
+                    <span className="inline-block px-3 py-1 rounded-full bg-[#1B4332]/5 border border-[#1B4332]/10 text-[#1B4332] text-[10px] font-bold uppercase tracking-widest">
+                      {item.tag}
+                    </span>
+                  )}
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Matching Feature Bar */}
       <FeatureBar
         features={[
-          "Breakfast Included",
-          "Swimming Pool",
-          "High Speed Wifi",
-          "Spa & Wellness",
+          "Hygenic Kitchen",
+          "Zero Preservatives",
+          "Chef Curated",
+          "Seasonal Specials",
+          "Nutrition Focused",
+          "Timely Service",
         ]}
-        duration={10}
+        duration={12}
       />
     </>
   );
