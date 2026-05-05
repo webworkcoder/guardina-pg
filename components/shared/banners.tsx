@@ -44,7 +44,7 @@ export const Banners = ({
           transition={{ delay: 0.4, duration: 0.8 }}
           className="flex items-center justify-center gap-3 text-white/90 text-sm md:text-base font-medium tracking-wide"
         >
-          <Link href="/" className="hover:text-[#E6AC6F] transition-colors">
+          <Link href="/" className="hover:text-black transition-colors">
             Home
           </Link>
           <span className="opacity-50 text-xl font-light">|</span>

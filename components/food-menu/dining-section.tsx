@@ -16,7 +16,7 @@ export const DiningSection = () => {
           {/* Header Content */}
           <div className="text-center mb-16 space-y-4">
             <div className="flex justify-center mb-4">
-              <div className="text-[#2C4A42] opacity-80">
+              <div className="text-[#1B5E20] opacity-80">
                 {/* Your Star SVG Icon */}
                 <svg
                   width="40"
@@ -33,7 +33,7 @@ export const DiningSection = () => {
               </div>
             </div>
 
-            <span className="text-orange-500 uppercase tracking-[0.4em] font-bold text-xs">
+            <span className="text-[#1B5E20] uppercase tracking-[0.4em] font-bold text-xs">
               Fine Dining Experience
             </span>
             <h2 className="text-4xl md:text-6xl font-serif text-slate-900 font-medium max-w-3xl mx-auto leading-tight">

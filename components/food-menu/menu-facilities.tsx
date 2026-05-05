@@ -95,7 +95,7 @@ export const MenuFacilities = () => {
           </div>
         </div>
       </section>
-      <FeatureBar
+      {/* <FeatureBar
         features={[
           "Breakfast Included",
           "Swimming Pool",
@@ -103,7 +103,7 @@ export const MenuFacilities = () => {
           "Spa & Wellness",
         ]}
         duration={10}
-      />
+      /> */}
     </>
   );
 };

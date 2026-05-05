@@ -15,16 +15,16 @@ export const RoomInfo = ({ room }: any) => {
       {/* Header Info */}
       <div className="border-b pb-8">
         <div className="flex justify-between items-center mb-4">
-          <span className="bg-[#2C4A42]/10 text-[#2C4A42] px-4 py-1 rounded-full text-sm font-semibold">
+          <span className="bg-[#1B5E20]/10 text-[#2C4A42] px-4 py-1 rounded-full text-sm font-semibold">
             {room.category}
           </span>
           <div className="flex items-center gap-2">
-            <Star className="w-5 h-5 fill-orange-400 text-orange-400" />
+            <Star className="w-5 h-5 fill-yellow-300 text-yellow-300" />
             <span className="font-bold">{room.rating}</span>
-            <span className="text-slate-400">({room.reviews} Reviews)</span>
+            <span className="text-slate-500">({room.reviews} Reviews)</span>
           </div>
         </div>
-        <h2 className="text-4xl font-serif font-bold text-slate-900 mb-2">
+        <h2 className="text-4xl font-serif font-bold text-[#1B5E20] mb-2">
           {room.title}
         </h2>
         <p className="text-slate-500 flex items-center gap-2">
@@ -64,14 +64,16 @@ export const RoomInfo = ({ room }: any) => {
       </div>
 
       <div>
-        <h3 className="text-2xl font-serif font-bold mb-4">Room Overview</h3>
+        <h3 className="text-2xl font-serif font-bold mb-4 text-[#1B5E20]">
+          Room Overview
+        </h3>
         <p className="text-slate-600 leading-relaxed text-lg">
           {room.overview}
         </p>
       </div>
 
       <div>
-        <h3 className="text-2xl  font-bold mb-6">Amenities</h3>
+        <h3 className="text-2xl  font-bold mb-6 text-[#1B5E20]">Amenities</h3>
         <div className="grid grid-cols-2 gap-4">
           {room.amenities.map((item: string) => (
             <div

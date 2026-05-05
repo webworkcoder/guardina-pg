@@ -25,7 +25,7 @@ export const BookingSidebar = ({ price }: { price: number }) => (
 
     <button
       className="px-8 py-2 rounded-full w-full
-        bg-gradient-to-r from-green-300 to-green-500
+        bg-[#1B5E20] text-white
         text-black font-semibold shadow-sm"
     >
       Book Now

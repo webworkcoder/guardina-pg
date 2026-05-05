@@ -32,7 +32,7 @@ export const LocationInfo = ({
   if (variant === "card") {
     return (
       <div className="w-full space-y-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 md:px-8">
           {items.map((item, index) => {
             const Icon = item.icon;
             const isActive = activeIndex === index;
@@ -44,7 +44,7 @@ export const LocationInfo = ({
                 whileHover={{ y: -8 }}
                 className={`relative p-8 rounded-[2rem] border transition-all duration-700 cursor-default overflow-hidden flex flex-col items-center text-center justify-center ${
                   isActive
-                    ? "bg-[#2C4A42] border-[#2C4A42] text-white shadow-2xl"
+                    ? "bg-[#1B5E20] border-[#1B5E20] text-white shadow-2xl"
                     : "bg-white border-slate-100 text-slate-900 shadow-sm"
                 }`}
               >
@@ -137,7 +137,7 @@ export const LocationInfo = ({
               href={mapUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#2C4A42] text-white px-6 py-3 rounded-full flex items-center gap-2 shadow-xl hover:bg-black transition-all font-bold text-sm"
+              className="bg-[#1B5E20] text-white px-6 py-3 rounded-full flex items-center gap-2 shadow-xl hover:bg-black transition-all font-bold text-sm"
             >
               <MapPin size={18} />
               Get Directions

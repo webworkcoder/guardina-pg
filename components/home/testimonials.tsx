@@ -9,6 +9,7 @@ import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import FeatureBar from "../shared/FeatureBar";
+import { usePathname } from "next/navigation";
 
 interface TestimonialItem {
   name: string;
@@ -20,6 +21,7 @@ interface TestimonialItem {
 }
 
 export const Testimonials: React.FC = () => {
+  const pathname = usePathname();
   const reviews: TestimonialItem[] = [
     {
       name: "Jenny Wilson",
@@ -200,15 +202,17 @@ export const Testimonials: React.FC = () => {
           }
         `}</style>
       </section>
-      <FeatureBar
-        features={[
-          "Breakfast Included",
-          "Swimming Pool",
-          "High Speed Wifi",
-          "Spa & Wellness",
-        ]}
-        duration={10}
-      />
+      {pathname === "/rooms" ? "" : (
+        <FeatureBar
+          features={[
+            "Breakfast Included",
+            "Swimming Pool",
+            "High Speed Wifi",
+            "Spa & Wellness",
+          ]}
+          duration={10}
+        />
+      )}
     </>
   );
 };

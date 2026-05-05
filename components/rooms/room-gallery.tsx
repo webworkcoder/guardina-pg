@@ -28,7 +28,7 @@ export const RoomGallery = ({ gallery }: any) => {
               onClick={() => setActiveImage(img)}
               className={`relative min-w-[140px] md:min-w-full h-full md:h-40 rounded-xl overflow-hidden cursor-pointer transition-all duration-300 flex-shrink-0 border-2 ${
                 isActive
-                  ? "border-[#2C4A42] z-10 scale-[0.98] shadow-lg shadow-[#2C4A42]/20"
+                  ? "border-[#1B5E20] z-10 scale-[0.98] shadow-lg shadow-[#1B5E20]/20"
                   : "border-transparent opacity-60 hover:opacity-100"
               }`}
             >
