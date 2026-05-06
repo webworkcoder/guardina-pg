@@ -9,24 +9,30 @@ import { useState, useEffect, useCallback } from "react";
 const slides = [
   {
     id: 1,
-    image: "https://serenityhostels.in/wp-content/uploads/2025/03/Best-Luxury-PG-in-Bangalore.jpg",
+    image:
+      "https://serenityhostels.in/wp-content/uploads/2025/03/Best-Luxury-PG-in-Bangalore.jpg",
     tagline: "Secure • Premium • Comfortable",
     title: "Redefining Elite Guardian Living",
-    subtitle: "Experience a sanctuary of comfort designed for the modern professional.",
+    subtitle:
+      "Experience a sanctuary of comfort designed for the modern professional.",
   },
   {
     id: 2,
-    image: "https://www.multihousingnews.com/wp-content/uploads/sites/57/2021/07/BKV-Group-Clubroom_Orlando.jpg",
+    image:
+      "https://www.multihousingnews.com/wp-content/uploads/sites/57/2021/07/BKV-Group-Clubroom_Orlando.jpg",
     tagline: "Thrive In Luxury",
     title: "More Than A Stay, It's Growth",
-    subtitle: "Join a vibrant community that fosters success in a high-end environment.",
+    subtitle:
+      "Join a vibrant community that fosters success in a high-end environment.",
   },
   {
     id: 3,
-    image: "https://www.frontsigns.com/wp-content/uploads/2022/02/modern-hotel-lobby-design.jpg",
+    image:
+      "https://www.frontsigns.com/wp-content/uploads/2022/02/modern-hotel-lobby-design.jpg",
     tagline: "Safety First Excellence",
     title: "Your Safety, Our Ultimate Priority",
-    subtitle: "Premium spaces secured with 24/7 care and world-class amenities.",
+    subtitle:
+      "Premium spaces secured with 24/7 care and world-class amenities.",
   },
 ];
 
@@ -81,7 +87,7 @@ export const HeroSection = () => {
         <motion.div
           key={slide.id}
           custom={direction}
-          variants={variants}
+          variants={variants as any}
           initial="enter"
           animate="center"
           exit="exit"
@@ -108,7 +114,10 @@ export const HeroSection = () => {
             className="max-w-3xl"
           >
             <motion.div
-              variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}
+              variants={{
+                hidden: { opacity: 0, x: -20 },
+                visible: { opacity: 1, x: 0 },
+              }}
               className="flex items-center gap-2 mb-6"
             >
               <div className="w-8 h-[1px] bg-[#22EB11]" />
@@ -119,7 +128,10 @@ export const HeroSection = () => {
             </motion.div>
 
             <motion.h1
-              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
               className="text-4xl md:text-7xl font-bold text-white leading-[1.1] mb-6"
             >
               {splitTitle.slice(0, -1).join(" ")}{" "}
@@ -136,7 +148,10 @@ export const HeroSection = () => {
             </motion.p>
 
             <motion.div
-              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
               className="flex gap-5"
             >
               <button className="px-10 py-4 rounded-sm bg-[#22EB11] text-black font-bold uppercase text-xs tracking-widest hover:bg-white transition-all duration-500 shadow-xl">
@@ -150,7 +165,10 @@ export const HeroSection = () => {
       {/* Progress Bars for Auto-scroll Visibility */}
       <div className="absolute bottom-10 left-8 md:left-20 flex gap-3 z-20">
         {slides.map((_, i) => (
-          <div key={i} className="h-1 w-16 bg-white/20 overflow-hidden rounded-full">
+          <div
+            key={i}
+            className="h-1 w-16 bg-white/20 overflow-hidden rounded-full"
+          >
             {i === index && (
               <motion.div
                 initial={{ width: 0 }}
