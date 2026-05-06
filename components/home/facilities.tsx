@@ -8,50 +8,50 @@ export const Facilities = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const facilitiesData = [
-    {
-      icon: Utensils,
-      title: "Breakfast Included",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
-    },
-    {
-      icon: Waves,
-      title: "Swimming Pool",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
-    },
-    {
-      icon: Wifi,
-      title: "High Speed Wifi",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
-    },
-    {
-      icon: Sparkles,
-      title: "Spa & Wellness",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
-    },
-    {
-      icon: Car,
-      title: "Pick Up & Drop",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
-    },
-    {
-      icon: Dumbbell,
-      title: "Fitness Hub",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
-    },
-  ];
+  {
+    icon: Utensils,
+    title: "Healthy Daily Meals",
+    description:
+      "Enjoy fresh, hygienic and home-style meals prepared daily to keep you energized and focused.",
+  },
+  {
+    icon: Wifi,
+    title: "High-Speed Wi-Fi",
+    description:
+      "Stay connected with fast and reliable internet, perfect for online classes, study and entertainment.",
+  },
+  {
+    icon: Sparkles,
+    title: "Daily Housekeeping",
+    description:
+      "Regular cleaning and maintenance to ensure a neat, comfortable and hassle-free living space.",
+  },
+  {
+    icon: Car,
+    title: "Easy Transport Access",
+    description:
+      "Convenient location with quick access to colleges, coaching centers and public transport.",
+  },
+  {
+    icon: Dumbbell,
+    title: "Study-Friendly Environment",
+    description:
+      "Peaceful and distraction-free atmosphere designed to help you focus and perform your best.",
+  },
+  {
+    icon: Waves,
+    title: "Safe & Secure Living",
+    description:
+      "24/7 security with controlled access, ensuring a safe and worry-free stay for students.",
+  },
+];
 
   return (
     <>
       <section className="py-10 relative overflow-hidden">
         <div className="absolute top-10 left-0 w-full flex justify-center pointer-events-none select-none opacity-[0.03]">
           <h1 className="text-[3rem] md:text-[10rem] font-bold text-slate-900 uppercase tracking-tighter leading-none">
-            FACILITIES
+               Facilities
           </h1>
         </div>
 
@@ -74,11 +74,11 @@ export const Facilities = () => {
                 </svg>
               </div>
               <span className="text-[#1B5E20] uppercase tracking-[0.3em] font-bold text-sm">
-                Hotel Facilities
+                 Our Facilities
               </span>
             </div>
             <h2 className="text-4xl md:text-6xl font-serif text-slate-900 leading-tight">
-              Relax with Premium Facilities
+              Comfortable Living for Students
             </h2>
           </div>
 
@@ -96,12 +96,14 @@ export const Facilities = () => {
       </section>
       <FeatureBar
         features={[
-          "Breakfast Included",
-          "Swimming Pool",
-          "High Speed Wifi",
-          "Spa & Wellness",
+          "Nutritious Home-Style Meals",
+          "24/7 Safety & Care",
+          "High-Speed Wi-Fi for Study & Streaming",
+          "Comfortable Study & Living Spaces",
+          "Biometric Access",
+          "Regular Cleaning & Maintenance",
         ]}
-        duration={10}
+        duration={12}
       />
     </>
   );

@@ -98,14 +98,14 @@ export const HeroExperience = () => {
 
       <FeatureBar
         features={[
-          "Gourmet Dining",
-          "Elite Security 24/7",
-          "High-Speed Fiber",
-          "Wellness Lounge",
+          "Nutritious Home-Style Meals",
+          "24/7 Safety & Care",
+          "High-Speed Wi-Fi for Study & Streaming",
+          "Comfortable Study & Living Spaces",
           "Biometric Access",
-          "Housekeeping Plus",
+          "Regular Cleaning & Maintenance",
         ]}
-        duration={15}
+        duration={12}
       />
     </>
   );

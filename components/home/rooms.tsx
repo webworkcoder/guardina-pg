@@ -12,7 +12,7 @@ export const Rooms = () => {
         {/* Background Watermark Text */}
         <div className="absolute top-10 left-0 w-full flex justify-center pointer-events-none select-none">
           <h1 className="text-[3rem] md:text-[10rem] font-bold text-slate-200/40 uppercase tracking-tighter leading-none whitespace-nowrap">
-            Rooms & Suits
+            Our Rooms
           </h1>
         </div>
 
@@ -37,10 +37,10 @@ export const Rooms = () => {
             </div>
 
             <span className="text-[#1B5E20] uppercase tracking-[0.4em] font-bold text-xs md:text-sm">
-              Rooms & Suites
+              Our Rooms
             </span>
             <h2 className="text-4xl md:text-6xl font-serif text-slate-900 font-medium">
-              Luxury Rooms & Suites
+              Comfortable Student Living Spaces
             </h2>
           </div>
 
@@ -56,13 +56,15 @@ export const Rooms = () => {
         </div>
       </section>
       <FeatureBar
-        features={[
-          "Breakfast Included",
-          "Swimming Pool",
-          "High Speed Wifi",
-          "Spa & Wellness",
+       features={[
+          "Nutritious Home-Style Meals",
+          "24/7 Safety & Care",
+          "High-Speed Wi-Fi for Study & Streaming",
+          "Comfortable Study & Living Spaces",
+          "Biometric Access",
+          "Regular Cleaning & Maintenance",
         ]}
-        duration={10}
+        duration={12}
       />
     </>
   );
