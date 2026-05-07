@@ -7,15 +7,15 @@ import FeatureBar from "../shared/FeatureBar";
 
 export const WhyChooseUs: React.FC = () => {
   const stats = [
-    { label: "Staff Members", value: "125+" },
-    { label: "Amenities", value: "20+" },
-    { label: "Booking Availability", value: "24/7" },
+    { label: "Comfortable Rooms", value: "125+" },
+    { label: "Premium Facilities", value: "20+" },
+    { label: "Support Availability", value: "24/7" },
   ];
 
   const features = [
-    "Luxurious & Comfortable Accommodations",
-    "Exceptional Service & Hospitality",
-    "Delicious Dining Options",
+    "Safe & Peaceful Environment",
+    "Fully Furnished Premium Rooms",
+    "Healthy Food & Daily Housekeeping",
   ];
 
   return (
@@ -51,7 +51,7 @@ export const WhyChooseUs: React.FC = () => {
               </span>
             </div>
             <h2 className="text-3xl md:text-6xl font-serif text-[#1A1A1A] max-w-3xl mx-auto leading-tight">
-              Discover Comfort Like Never Before
+              Premium PG Living Experience in Patna
             </h2>
           </div>
 
@@ -64,7 +64,7 @@ export const WhyChooseUs: React.FC = () => {
                 className="relative col-span-8 aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl"
               >
                 <Image
-                  src="/pg1.jpg"
+                  src="/rooms/pg16.jpeg"
                   alt="Luxury Interior"
                   fill
                   className="object-cover"
@@ -78,14 +78,13 @@ export const WhyChooseUs: React.FC = () => {
                         className="w-8 h-8 md:w-12 md:h-12 rounded-full border-2 border-[#1B5E20] bg-slate-200 overflow-hidden relative"
                       >
                         <Image
-                          src={`/pg.png`}
+                          src={`/rooms/pg5.jpeg`}
                           alt="user"
                           fill
                           className="object-cover"
                         />
                       </div>
                     ))}
-                 
                   </div>
                   <div>
                     <p className="font-bold text-sm md:text-xl leading-none">
@@ -105,7 +104,7 @@ export const WhyChooseUs: React.FC = () => {
                 className="relative col-span-4 aspect-[2/3] rounded-[1.5rem] overflow-hidden mb-10 shadow-xl"
               >
                 <Image
-                  src="/pg2.jpg"
+                  src="/rooms/pg13.jpeg"
                   alt="Service Staff"
                   fill
                   className="object-cover"
@@ -116,9 +115,11 @@ export const WhyChooseUs: React.FC = () => {
             <div className="flex flex-col justify-center h-full space-y-8 md:space-y-10">
               <div className="space-y-4">
                 <p className="text-slate-500 leading-relaxed text-base md:text-xl">
-                  Experience a new standard of living with our handpicked
-                  facilities and dedicated support. We don&#39;t just provide a
-                  room; we provide a lifestyle.
+                  Experience modern and comfortable living with thoughtfully
+                  designed rooms, premium facilities, and a secure environment.
+                  Our PG is built to provide students and working professionals
+                  with convenience, comfort, and a stress-free lifestyle in the
+                  heart of Patna.
                 </p>
                 <div className="h-[1px] w-full bg-slate-100" />
               </div>
@@ -172,12 +173,14 @@ export const WhyChooseUs: React.FC = () => {
       </section>
       <FeatureBar
         features={[
-          "Breakfast Included",
-          "Swimming Pool",
-          "High Speed Wifi",
-          "Spa & Wellness",
+          "Nutritious Home-Style Meals",
+          "24/7 Safety & Care",
+          "High-Speed Wi-Fi for Study & Streaming",
+          "Comfortable Study & Living Spaces",
+          "Biometric Access",
+          "Regular Cleaning & Maintenance",
         ]}
-        duration={10}
+        duration={12}
       />
     </>
   );

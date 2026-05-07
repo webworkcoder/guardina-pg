@@ -44,13 +44,13 @@ const RoomCard = ({
 
         {/* Content */}
         <div className="p-6 space-y-4">
-          <div className="flex justify-between items-center">
-            <div className="flex items-baseline gap-1">
+          <div className="flex justify-end items-center">
+            {/* <div className="flex items-baseline gap-1">
               <span className="text-2xl font-serif font-bold text-[#1B5E20]">
                 ₹{price}
               </span>
               <span className="text-slate-400 text-sm">/month</span>
-            </div>
+            </div> */}
             <div className="flex items-center gap-1">
               <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
               <span className="font-semibold text-slate-700">{rating}</span>

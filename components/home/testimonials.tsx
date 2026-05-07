@@ -24,11 +24,11 @@ export const Testimonials: React.FC = () => {
   const pathname = usePathname();
   const reviews: TestimonialItem[] = [
     {
-      name: "Jenny Wilson",
-      role: "Happy Guest",
+      name: "Mr. Suraj",
+      role: "Doctor",
       title: "Professional and Friendly!",
       content:
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.",
+        "“Hi ! I'm preparing for NEET. Guardian P.G Service help me by maintaining Good and silent Environment for Study. I have a single sharing room at affordable cost. ”",
       rating: "5.0",
       image: "/pg.png",
     },
@@ -88,10 +88,10 @@ export const Testimonials: React.FC = () => {
           {/* Moving Slider Container */}
           <div>
             <Swiper
-              modules={[Pagination, Autoplay]}
+              modules={[Pagination]}
               spaceBetween={30}
               slidesPerView={1}
-              autoplay={{ delay: 3000, disableOnInteraction: false }}
+            
               pagination={{
                 clickable: true,
                 el: ".custom-pagination",
@@ -202,7 +202,9 @@ export const Testimonials: React.FC = () => {
           }
         `}</style>
       </section>
-      {pathname === "/rooms" ? "" : (
+      {pathname === "/rooms" ? (
+        ""
+      ) : (
         <FeatureBar
           features={[
             "Breakfast Included",
