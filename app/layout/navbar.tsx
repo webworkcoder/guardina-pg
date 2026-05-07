@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { Menu, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -74,6 +74,10 @@ const Navbar = () => {
     setOpen(false);
   };
 
+  const handleCallNow = () => {
+    window.location.href = "tel:+919473434263";
+  };
+
   return (
     <nav className="flex items-center justify-between p-3 px-4 md:px-8 bg-gradient-to-r from-white via-yellow-50 to-orange-50 sticky top-0 z-30">
       {/* Logo */}
@@ -106,16 +110,28 @@ const Navbar = () => {
       </div>
 
       {/* Desktop CTA */}
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        onClick={handleBookNow}
-        className="px-8 py-2 rounded-full hidden lg:block
-        bg-[#1B5E20]
-        text-white font-semibold shadow-sm cursor-pointer"
-      >
-        Book Now
-      </motion.button>
+      <div className="hidden lg:flex items-center gap-3">
+        {/* Call Now */}
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={handleCallNow}
+          className="px-6 py-2 rounded-full border border-[#1B5E20] text-[#1B5E20] font-semibold shadow-sm cursor-pointer flex items-center gap-2 hover:bg-[#1B5E20] hover:text-white transition-all"
+        >
+          <Phone size={18} />
+          Call Now
+        </motion.button>
+
+        {/* Book Now */}
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={handleBookNow}
+          className="px-8 py-2 rounded-full bg-[#1B5E20] text-white font-semibold shadow-sm cursor-pointer"
+        >
+          Book Now
+        </motion.button>
+      </div>
 
       {/* Mobile Icon */}
       <Menu
@@ -157,7 +173,6 @@ const Navbar = () => {
                   onClick={() => setOpen(false)}
                 />
               </div>
-
               {/* Menu Items */}
               <div className="flex flex-col items-center justify-center h-[70%] gap-8 text-3xl italic">
                 {data.map((item, i) => (
@@ -182,14 +197,24 @@ const Navbar = () => {
                   </motion.div>
                 ))}
               </div>
-
               {/* CTA */}
-              <div className="flex justify-center px-4 pb-6">
+              <div className="flex flex-col gap-3 px-4 pb-6">
                 <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.97 }}
+                  onClick={handleCallNow}
+                  className="w-full px-8 py-3 rounded-full border border-[#1B5E20] text-[#1B5E20] font-semibold shadow-sm cursor-pointer flex items-center justify-center gap-2 hover:bg-[#1B5E20] hover:text-white transition-all"
+                >
+                  <Phone size={18} />
+                  Call Now
+                </motion.button>
+
+                {/* Book Button */}
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.97 }}
                   onClick={handleBookNow}
-                  className="px-8 py-2 rounded-full hidden lg:block bg-[#1B5E20] text-white font-semibold shadow-sm cursor-pointer"
+                  className="w-full px-8 py-3 rounded-full bg-[#1B5E20] text-white font-semibold shadow-sm cursor-pointer"
                 >
                   Book Now
                 </motion.button>

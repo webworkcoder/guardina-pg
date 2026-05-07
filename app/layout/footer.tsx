@@ -1,10 +1,10 @@
 "use client";
-import React from "react";
 import Link from "next/link";
 import { FaFacebook } from "react-icons/fa";
 import { BsInstagram, BsTwitter, BsYoutube } from "react-icons/bs";
 import { LiaLinkedin } from "react-icons/lia";
 import { Send } from "lucide-react";
+import Image from "next/image";
 
 export const Footer = () => {
   return (
@@ -13,16 +13,26 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Logo & About Section */}
           <div className="space-y-6">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-[#E6AC6F] rounded-full flex items-center justify-center">
-                <span className="text-[#2C4A42] font-bold text-2xl">G</span>
+            <div className="flex items-center gap-4">
+              {/* Logo */}
+              <div className="relative w-[95px] h-[70px] flex-shrink-0">
+                <Image
+                  src={"/pg.png"}
+                  fill
+                  alt="Guardian PG Logo"
+                  className="object-contain"
+                  priority
+                />
               </div>
-              <div>
-                <h2 className="text-2xl font-serif font-bold tracking-wide">
+
+              {/* Text */}
+              <div className="flex flex-col justify-center">
+                <h2 className="text-2xl md:text-3xl font-serif font-bold tracking-wide text-white leading-none">
                   Guardian
                 </h2>
-                <p className="text-[10px] uppercase tracking-[0.2em] opacity-70">
-                  PG
+
+                <p className="text-[11px] md:text-xs uppercase tracking-[0.28em] text-white/70 font-medium mt-1 leading-none">
+                  Boy&#39;s Hostel & PG
                 </p>
               </div>
             </div>
@@ -126,7 +136,6 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-[13px] text-white/50">
           <p className="text-center md:text-left">
