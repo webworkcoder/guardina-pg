@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Plus, Minus, PhoneCall } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const faqData = [
   {
@@ -150,13 +151,15 @@ export const FaqSection = () => {
                   </p>
                 </div>
 
-                <button className="w-full py-2 px-4 bg-white text-[#1A1A1A] font-bold rounded-2xl hover:bg-[#d49b5f] transition-all">
-                  Contact Us
-                </button>
+                <Link href={"/contact"}>
+                  <button className="w-full py-2 px-4 bg-white text-[#1A1A1A] font-bold rounded-2xl hover:bg-[#d49b5f] transition-all cursor-pointer">
+                    Contact Us
+                  </button>
+                </Link>
               </div>
 
               {/* Service Card */}
-              <div className="bg-white rounded-2xl p-8 border border-slate-100 flex items-center gap-5 shadow-sm">
+              {/* <div className="bg-white rounded-2xl p-8 border border-slate-100 flex items-center gap-5 shadow-sm">
                 <div className="w-14 h-14 bg-slate-50 rounded-full flex items-center justify-center text-[#2C4A42]">
                   <PhoneCall size={28} />
                 </div>
@@ -169,7 +172,7 @@ export const FaqSection = () => {
                   </h4>
                   <p className="text-[#2C4A42] font-bold">+91 9473434263</p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
