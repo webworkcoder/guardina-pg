@@ -2,38 +2,37 @@
 import React, { useState } from "react";
 import { Plus, Minus, PhoneCall } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import FeatureBar from "../shared/FeatureBar";
 
 const faqData = [
   {
-    question: "What time is check-in and check-out?",
+    question: "What amenities are included in the PG?",
     answer:
-      "Standard check-in time is at 2:00 PM and check-out is at 11:00 AM. Early check-in or late check-out is subject to availability.",
+      "Our premium PG offers fully furnished rooms, high-speed WiFi, daily housekeeping, power backup, laundry services, CCTV security, biometric entry, and delicious home-style meals.",
   },
   {
-    question: "What is the hotel's cancellation policy?",
+    question: "Are meals included in the accommodation?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam.",
+      "Yes, hygienic and nutritious breakfast, lunch, and dinner are included. We provide fresh home-style food prepared with proper care and cleanliness.",
   },
   {
-    question: "Does the hotel have on-site restaurants?",
+    question: "Is the PG suitable for working professionals and students?",
     answer:
-      "Yes, we have three multi-cuisine restaurants and a rooftop bar serving local and international delicacies.",
+      "Absolutely. Our living spaces are thoughtfully designed for both students and working professionals with peaceful study/work environments and modern facilities.",
   },
   {
-    question: "What types of rooms are available?",
+    question: "What room sharing options are available?",
     answer:
-      "We offer Deluxe Rooms, Executive Suites, and Family Villas, each designed for maximum comfort and high-fidelity living.",
+      "We offer Single Sharing, Double Sharing, and Triple Sharing rooms. All rooms are spacious, well-ventilated, and fully furnished for maximum comfort.",
   },
   {
-    question: "Is parking available at the hotel?",
+    question: "Is there 24/7 security available?",
     answer:
-      "Yes, we provide complimentary secure valet parking for all our staying guests and event attendees.",
+      "Yes, safety is our top priority. The property is secured with CCTV surveillance, biometric access, gated entry, and on-site staff available round the clock.",
   },
   {
-    question: "Does the hotel have event or meeting spaces?",
+    question: "How can I book a room or schedule a visit?",
     answer:
-      "Absolutely. We have state-of-the-art conference rooms and a grand ballroom for weddings and corporate events.",
+      "You can easily fill out the enquiry form on our website or contact our support team directly to schedule a property visit and reserve your preferred room.",
   },
 ];
 
@@ -68,8 +67,8 @@ export const FaqSection = () => {
                 Faqs
               </span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-serif text-[#1A1A1A]">
-              Question? Look here.
+            <h2 className="text-4xl md:text-5xl text-[#1A1A1A]">
+              Frequently Asked <span className="text-[#1B5E20]">Questions</span>
             </h2>
           </div>
 
@@ -89,7 +88,7 @@ export const FaqSection = () => {
                   >
                     <button
                       onClick={() => setActiveIndex(isOpen ? null : index)}
-                      className="w-full flex items-center justify-between p-5 md:p-6 text-left"
+                      className="w-full flex items-center justify-between p-5 md:p-6 text-left cursor-pointer"
                     >
                       <span
                         className={`font-bold text-lg md:text-xl ${isOpen ? "text-white" : "text-[#1A1A1A]"}`}
@@ -168,7 +167,7 @@ export const FaqSection = () => {
                   <h4 className="text-xl font-bold text-[#1A1A1A]">
                     24/7 Service
                   </h4>
-                  <p className="text-[#2C4A42] font-bold">+91 123456781</p>
+                  <p className="text-[#2C4A42] font-bold">+91 9473434263</p>
                 </div>
               </div>
             </div>

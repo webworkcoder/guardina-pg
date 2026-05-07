@@ -18,7 +18,7 @@ export const ContactPage = ({
       <Banners title={title} currentPage={currentPage} bgImage={bgImage} />
       <ReservationForm />
       <div className="footer-column ">
-        <h4 className="text-black font-bold mb-4 text-2xl px-4 md:px-8">
+        <h4 className="text-black font-bold mb-4 text-2xl md:text-4xl px-4 md:px-8">
           Get In Touch
         </h4>
         <LocationInfo variant="card" />

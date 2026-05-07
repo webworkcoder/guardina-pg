@@ -4,7 +4,7 @@
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -53,6 +53,26 @@ const itemVariants = {
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
+
+  const handleBookNow = () => {
+    // If already on homepage → smooth scroll
+    if (pathname === "/") {
+      const section = document.getElementById("contact");
+
+      if (section) {
+        section.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    } else {
+      // If on another page → navigate to homepage contact section
+      router.push("/#contact");
+    }
+
+    setOpen(false);
+  };
 
   return (
     <nav className="flex items-center justify-between p-3 px-4 md:px-8 bg-gradient-to-r from-white via-yellow-50 to-orange-50 sticky top-0 z-30">
@@ -89,9 +109,10 @@ const Navbar = () => {
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
+        onClick={handleBookNow}
         className="px-8 py-2 rounded-full hidden lg:block
         bg-[#1B5E20]
-        text-white font-semibold shadow-sm"
+        text-white font-semibold shadow-sm cursor-pointer"
       >
         Book Now
       </motion.button>
@@ -167,9 +188,8 @@ const Navbar = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-3 rounded-full w-full
-                 bg-[#1B5E20]
-                  text-white font-semibold shadow-md"
+                  onClick={handleBookNow}
+                  className="px-8 py-2 rounded-full hidden lg:block bg-[#1B5E20] text-white font-semibold shadow-sm cursor-pointer"
                 >
                   Book Now
                 </motion.button>

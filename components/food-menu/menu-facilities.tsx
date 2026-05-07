@@ -11,39 +11,39 @@ export const MenuFacilities = () => {
   const facilitiesData = [
     {
       icon: Utensils,
-      title: "Breakfast Included",
+      title: "Nutritious Meals",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+        "Enjoy fresh and hygienic home-style breakfast, lunch, and dinner prepared with quality ingredients every day.",
     },
     {
       icon: Waves,
-      title: "Swimming Pool",
+      title: "Peaceful Environment",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+        "Experience a calm and comfortable atmosphere designed for relaxation, study, and stress-free living.",
     },
     {
       icon: Wifi,
-      title: "High Speed Wifi",
+      title: "High-Speed WiFi",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+        "Stay connected with uninterrupted high-speed internet perfect for online classes, work, streaming, and gaming.",
     },
     {
       icon: Sparkles,
-      title: "Spa & Wellness",
+      title: "Daily Housekeeping",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+        "Clean and well-maintained rooms with regular housekeeping services to ensure hygiene and comfort.",
     },
     {
       icon: Car,
-      title: "Pick Up & Drop",
+      title: "Easy Connectivity",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+        "Located near major colleges, offices, markets, and transport hubs for smooth daily commuting and convenience.",
     },
     {
       icon: Dumbbell,
-      title: "Fitness Hub",
+      title: "Modern Lifestyle",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+        "Premium furnished rooms, stylish interiors, and essential amenities crafted for modern student and professional living.",
     },
   ];
 
@@ -74,7 +74,7 @@ export const MenuFacilities = () => {
                   />
                 </svg>
               </div>
-              <span className="text-orange-500 uppercase tracking-[0.3em] font-bold text-sm">
+              <span className="text-[#1B5E20] uppercase tracking-[0.3em] font-bold text-sm">
                 Menu Facilities
               </span>
             </div>

@@ -34,14 +34,16 @@ export const DiningSection = () => {
             </div>
 
             <span className="text-[#1B5E20] uppercase tracking-[0.4em] font-bold text-xs">
-              Fine Dining Experience
+              Premium Living Experience
             </span>
             <h2 className="text-4xl md:text-6xl font-serif text-slate-900 font-medium max-w-3xl mx-auto leading-tight">
-              An Enchanting Blend of Taste and Elegance Awaits
+              Comfortable Spaces Crafted For
+              <span className="text-[#1B5E20]"> Modern Living</span>
             </h2>
             <p className="text-slate-500 max-w-2xl mx-auto text-lg leading-relaxed">
-              Experience culinary excellence where every dish tells a story of
-              tradition, passion, and the finest local ingredients.
+              Experience premium PG living with fully furnished rooms, peaceful
+              surroundings, high-speed WiFi, hygienic meals, and modern
+              amenities designed for students and professionals.
             </p>
           </div>
 
@@ -76,12 +78,14 @@ export const DiningSection = () => {
       </section>
       <FeatureBar
         features={[
-          "Breakfast Included",
-          "Swimming Pool",
-          "High Speed Wifi",
-          "Spa & Wellness",
+          "Nutritious Home-Style Meals",
+          "24/7 Safety & Care",
+          "High-Speed Wi-Fi for Study & Streaming",
+          "Comfortable Study & Living Spaces",
+          "Biometric Access",
+          "Regular Cleaning & Maintenance",
         ]}
-        duration={10}
+        duration={12}
       />
     </>
   );

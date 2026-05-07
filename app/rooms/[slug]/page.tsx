@@ -46,12 +46,14 @@ export default async function RoomDetailsPage({
       </main>
       <FeatureBar
         features={[
-          "Breakfast Included",
-          "Swimming Pool",
-          "High Speed Wifi",
-          "Spa & Wellness",
+          "Nutritious Home-Style Meals",
+          "24/7 Safety & Care",
+          "High-Speed Wi-Fi for Study & Streaming",
+          "Comfortable Study & Living Spaces",
+          "Biometric Access",
+          "Regular Cleaning & Maintenance",
         ]}
-        duration={10}
+        duration={12}
       />
       <div className="footer-column ">
         <h4 className="text-black font-bold mb-4 text-2xl px-4 md:px-8">

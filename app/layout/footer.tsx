@@ -9,7 +9,7 @@ import { Send } from "lucide-react";
 export const Footer = () => {
   return (
     <footer className="bg-[#1B5E20] text-white pt-16 pb-8">
-      <div className="container mx-auto px-4 md:px-8">
+      <div className="px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Logo & About Section */}
           <div className="space-y-6">
@@ -27,8 +27,9 @@ export const Footer = () => {
               </div>
             </div>
             <p className="text-white/70 text-sm leading-relaxed max-w-xs">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna.
+              Experience premium PG living with fully furnished rooms, healthy
+              home-style meals, high-speed WiFi, and a safe environment crafted
+              for students and working professionals.
             </p>
             {/* Social Icons */}
             <div className="flex gap-3">
@@ -52,42 +53,42 @@ export const Footer = () => {
             <ul className="space-y-4 text-white/70 text-sm">
               <li>
                 <Link
-                  href="#"
+                  href="/"
                   className="hover:text-[#E6AC6F] transition-colors"
                 >
-                  FAQs
+                  Home
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/about"
                   className="hover:text-[#E6AC6F] transition-colors"
                 >
-                  Our Staff
+                  About
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/rooms"
                   className="hover:text-[#E6AC6F] transition-colors"
                 >
-                  Contact Us
+                  Rooms
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/food-menu"
                   className="hover:text-[#E6AC6F] transition-colors"
                 >
-                  About Us
+                  Food Menu
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/contact"
                   className="hover:text-[#E6AC6F] transition-colors"
                 >
-                  Guest Review
+                  Contact
                 </Link>
               </li>
             </ul>
@@ -98,14 +99,13 @@ export const Footer = () => {
             <h3 className="text-xl font-serif mb-6">Contact Info</h3>
             <ul className="space-y-4 text-white/70 text-sm">
               <li className="hover:text-[#E6AC6F] cursor-pointer">
-                (+91) 1234567891
+                (+91) 9473434263
               </li>
               <li className="hover:text-[#E6AC6F] cursor-pointer">
-                example@gmail.com
+                info@guardianpg.in
               </li>
               <li className="leading-relaxed">
-                2464 Royal Ln. Mesa, New
-                <br /> Jersey 45463
+                Vivekanand Marg, H/O-10, Mother Teresa Marg, Patna 800013
               </li>
             </ul>
           </div>
@@ -129,18 +129,32 @@ export const Footer = () => {
         {/* Bottom Bar */}
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-[13px] text-white/50">
-          <p>
-            Copyright © {new Date().getFullYear()} Guardian Pg. All Rights
+          <p className="text-center md:text-left">
+            Copyright © {new Date().getFullYear()} Guardian PG. All Rights
             Reserved.
           </p>
-          <div className="flex gap-6">
-            <Link href="#" className="hover:text-white">
+
+          <div className="flex flex-wrap justify-center items-center gap-3 text-center">
+            <Link href="#" className="hover:text-white transition-colors">
               User Terms & Conditions
             </Link>
-            <span className="opacity-30">|</span>
-            <Link href="#" className="hover:text-white">
+
+            <span className="opacity-30 hidden md:block">|</span>
+
+            <Link href="#" className="hover:text-white transition-colors">
               Privacy Policy
             </Link>
+
+            <span className="opacity-30 hidden md:block">|</span>
+
+            <a
+              href="https://axvionel.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#E6AC6F] transition-colors"
+            >
+              Designed & Developed by Axvionel Digital Private Limited
+            </a>
           </div>
         </div>
       </div>

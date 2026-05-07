@@ -13,8 +13,8 @@ interface LocationInfoProps {
 }
 
 export const LocationInfo = ({
-  address = "Building name- Big Daddy, A-1, Rd Number 5C, Boring Rd, Block - A, North Sri Krishna Puri, Patna, Bihar 800013",
-  phone = "+91 98765 43210",
+  address = "Vivekanand Marg, H/O-10, Mother Teresa Marg, Patna 800013",
+  phone = "+91 9473434263",
   email = "info@guardianpg.in",
   timing = "Open 24/7",
   mapUrl = "https://www.google.com/maps?q=Building+name-+Big+Daddy,+A-1,+Rd+Number+5C,+Boring+Rd,+Patna",

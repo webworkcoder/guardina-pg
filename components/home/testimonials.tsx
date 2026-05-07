@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import { Star, User } from "lucide-react";
 // Swiper imports
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
@@ -26,36 +26,36 @@ export const Testimonials: React.FC = () => {
     {
       name: "Mr. Suraj",
       role: "Doctor",
-      title: "Professional and Friendly!",
+      title: "Doctor Says",
       content:
-        "“Hi ! I'm preparing for NEET. Guardian P.G Service help me by maintaining Good and silent Environment for Study. I have a single sharing room at affordable cost. ”",
+        "Hi ! I'm preparing for NEET. Guardian P.G Service help me by maintaining Good and silent Environment for Study. I have a single sharing room at affordable cost.",
       rating: "5.0",
       image: "/pg.png",
     },
     {
-      name: "Bessie Cooper",
-      role: "Happy Guest",
-      title: "Excellent Hospitality!",
+      name: "Mr. A. Harshwardhan",
+      role: "Customer",
+      title: "Student",
       content:
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium .",
+        "I came to Patna for preparation of IIT-JEE. My seniors had told me about miserable condition of mess food in Patna. Thanks to Maa Gayatri Boys for changing image of Hostels. Foods are tasty and rooms are hygenic.",
       rating: "5.0",
       image: "/pg.png",
     },
     {
-      name: "Bessie Cooper",
-      role: "Happy Guest",
-      title: "Excellent Hospitality!",
+      name: "Mr. Pankaj Singh",
+      role: "Customer",
+      title: "Customer",
       content:
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+        "I love this hostel. I have lived in 2 hostel before but none was better than this. Playground is nearby and being in Heart of city gives me access to everything.",
       rating: "5.0",
       image: "/pg.png",
     },
     {
-      name: "Jenny Wilson",
-      role: "Happy Guest",
-      title: "Professional and Friendly!",
+      name: "Mr. Manish Singh",
+      role: "Customer",
+      title: "Customer",
       content:
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.",
+        "Tasty Food, Peaceful environment, Helpful seniors and parents like warden.....Guardian P.G Service is blessed with all these. This is second home for me",
       rating: "5.0",
       image: "/pg.png",
     },
@@ -91,7 +91,6 @@ export const Testimonials: React.FC = () => {
               modules={[Pagination]}
               spaceBetween={30}
               slidesPerView={1}
-            
               pagination={{
                 clickable: true,
                 el: ".custom-pagination",
@@ -140,7 +139,7 @@ export const Testimonials: React.FC = () => {
                       </div>
 
                       <div className="space-y-3">
-                        <h3 className="text-2xl font-serif font-bold text-[#1B5E20]">
+                        <h3 className="text-2xl font-bold text-[#1B5E20]">
                           {item.title}
                         </h3>
                         <p className="text-slate-500 leading-relaxed text-base italic">
@@ -149,13 +148,14 @@ export const Testimonials: React.FC = () => {
                       </div>
 
                       <div className="flex items-center gap-4 pt-4 mt-auto">
-                        <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-white shadow-md bg-slate-50">
-                          <Image
+                        <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-white shadow-md bg-slate-50 flex items-center justify-center">
+                          {/* <Image
                             src={item.image}
                             alt={item.name}
                             fill
                             className="object-cover"
-                          />
+                          /> */}
+                          <User className="text-slate-500" />
                         </div>
                         <div>
                           <h4 className="text-lg font-bold text-[#1B5E20]">
@@ -207,12 +207,14 @@ export const Testimonials: React.FC = () => {
       ) : (
         <FeatureBar
           features={[
-            "Breakfast Included",
-            "Swimming Pool",
-            "High Speed Wifi",
-            "Spa & Wellness",
+            "Nutritious Home-Style Meals",
+            "24/7 Safety & Care",
+            "High-Speed Wi-Fi for Study & Streaming",
+            "Comfortable Study & Living Spaces",
+            "Biometric Access",
+            "Regular Cleaning & Maintenance",
           ]}
-          duration={10}
+          duration={12}
         />
       )}
     </>
