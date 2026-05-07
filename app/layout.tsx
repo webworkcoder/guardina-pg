@@ -13,7 +13,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Guardian P.G Service",
+  title: "Guardian Boy’s Hostel & PG",
   description: "Created By Axvionel Digital Private Limited.",
 };
 
