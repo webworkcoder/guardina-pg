@@ -224,13 +224,13 @@ export const HeroSection = () => {
                 className="flex flex-col sm:flex-row gap-4"
               >
                 <Link href={"/contact"}>
-                  <button className="px-8 md:px-10 py-4 rounded-full bg-[#1B5E20] text-white font-bold uppercase tracking-[0.2em] text-xs  transition-all duration-300">
+                  <button className="px-8 md:px-10 py-4 rounded-full bg-[#1B5E20] text-white font-bold uppercase tracking-[0.2em] text-xs  transition-all duration-300 w-full">
                     Book Your Stay
                   </button>
                 </Link>
 
                 <Link href={"/rooms"}>
-                  <button className="px-8 md:px-10 py-4 rounded-full border border-[#1B5E20] text-white font-semibold uppercase tracking-[0.2em] text-xs  transition-all duration-300">
+                  <button className="px-8 md:px-10 py-4 rounded-full border border-[#1B5E20] text-white font-semibold uppercase tracking-[0.2em] text-xs  transition-all duration-300 w-full">
                     Explore Rooms
                   </button>
                 </Link>
