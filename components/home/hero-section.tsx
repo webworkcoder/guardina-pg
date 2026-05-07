@@ -9,6 +9,7 @@ import {
   Volume2,
   VolumeX,
 } from "lucide-react";
+import Link from "next/link";
 import { useState, useEffect, useCallback, useRef } from "react";
 
 const slides = [
@@ -222,13 +223,17 @@ export const HeroSection = () => {
                 }}
                 className="flex flex-col sm:flex-row gap-4"
               >
-                <button className="px-8 md:px-10 py-4 rounded-full bg-[#1B5E20] text-white font-bold uppercase tracking-[0.2em] text-xs  transition-all duration-300">
-                  Book Your Stay
-                </button>
+                <Link href={"/contact"}>
+                  <button className="px-8 md:px-10 py-4 rounded-full bg-[#1B5E20] text-white font-bold uppercase tracking-[0.2em] text-xs  transition-all duration-300">
+                    Book Your Stay
+                  </button>
+                </Link>
 
-                <button className="px-8 md:px-10 py-4 rounded-full border border-[#1B5E20] text-white font-semibold uppercase tracking-[0.2em] text-xs  transition-all duration-300">
-                  Explore Rooms
-                </button>
+                <Link href={"/rooms"}>
+                  <button className="px-8 md:px-10 py-4 rounded-full border border-[#1B5E20] text-white font-semibold uppercase tracking-[0.2em] text-xs  transition-all duration-300">
+                    Explore Rooms
+                  </button>
+                </Link>
               </motion.div>
             </motion.div>
           </AnimatePresence>
