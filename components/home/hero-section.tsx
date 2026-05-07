@@ -1,34 +1,38 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, ArrowRight, ShieldCheck } from "lucide-react";
-import { useState, useEffect, useCallback } from "react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  ShieldCheck,
+  Volume2,
+  VolumeX,
+} from "lucide-react";
+import { useState, useEffect, useCallback, useRef } from "react";
 
 const slides = [
   {
     id: 1,
-    image:
-      "https://serenityhostels.in/wp-content/uploads/2025/03/Best-Luxury-PG-in-Bangalore.jpg",
+    video: "/video/pgVideo1.mp4",
     tagline: "Secure • Premium • Comfortable",
     title: "Redefining Elite Guardian Living",
     subtitle:
       "Experience a sanctuary of comfort designed for the modern professional.",
   },
+
   {
     id: 2,
-    image:
-      "https://www.multihousingnews.com/wp-content/uploads/sites/57/2021/07/BKV-Group-Clubroom_Orlando.jpg",
+    video: "/video/pgVideo1.mp4",
     tagline: "Thrive In Luxury",
     title: "More Than A Stay, It's Growth",
     subtitle:
       "Join a vibrant community that fosters success in a high-end environment.",
   },
+
   {
     id: 3,
-    image:
-      "https://www.frontsigns.com/wp-content/uploads/2022/02/modern-hotel-lobby-design.jpg",
+    video: "/video/pgVideo1.mp4",
     tagline: "Safety First Excellence",
     title: "Your Safety, Our Ultimate Priority",
     subtitle:
@@ -39,8 +43,11 @@ const slides = [
 export const HeroSection = () => {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [muted, setMuted] = useState(true);
 
-  // Auto-scroll logic
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  // Auto Slide
   const nextSlide = useCallback(() => {
     setDirection(1);
     setIndex((prev) => (prev + 1) % slides.length);
@@ -51,10 +58,12 @@ export const HeroSection = () => {
     setIndex((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
+  // Auto Change
   useEffect(() => {
     const timer = setInterval(() => {
       nextSlide();
-    }, 5000); // Change slide every 5 seconds
+    }, 7000);
+
     return () => clearInterval(timer);
   }, [nextSlide]);
 
@@ -63,27 +72,35 @@ export const HeroSection = () => {
 
   const variants = {
     enter: (dir: number) => ({
-      x: dir > 0 ? "10%" : "-10%",
       opacity: 0,
-      scale: 1.1,
+      scale: 1.08,
+      x: dir > 0 ? "8%" : "-8%",
     }),
+
     center: {
-      x: 0,
       opacity: 1,
       scale: 1,
-      transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] },
+      x: 0,
+      transition: {
+        duration: 1,
+        ease: [0.16, 1, 0.3, 1],
+      },
     },
+
     exit: (dir: number) => ({
-      x: dir > 0 ? "-10%" : "10%",
       opacity: 0,
-      scale: 1.1,
-      transition: { duration: 0.8 },
+      scale: 1.08,
+      x: dir > 0 ? "-8%" : "8%",
+      transition: {
+        duration: 0.8,
+      },
     }),
   };
 
   return (
-    <section className="relative w-full h-[75vh] md:h-[90vh] overflow-hidden bg-black">
-      <AnimatePresence mode="popLayout" custom={direction}>
+    <section className="relative w-full h-[90vh] md:h-screen overflow-hidden bg-black/80">
+      {/* VIDEO SLIDER */}
+      <AnimatePresence mode="wait" custom={direction}>
         <motion.div
           key={slide.id}
           custom={direction}
@@ -93,105 +110,175 @@ export const HeroSection = () => {
           exit="exit"
           className="absolute inset-0"
         >
-          <img
-            src={slide.image}
-            alt="Guardian Luxury PG"
+          {/* Video */}
+          <video
+            ref={videoRef}
+            autoPlay
+            muted={muted}
+            loop
+            playsInline
+            preload="metadata"
             className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/20" />
+          >
+            <source src={slide.video} type="video/mp4" />
+          </video>
+
+          {/* Premium Overlay */}
+          <div className="absolute inset-0 bg-black/50" />
+
+          <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/45 to-black/20" />
+
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30" />
         </motion.div>
       </AnimatePresence>
 
-      <div className="relative z-10 flex flex-col items-start justify-center px-8 md:px-20 h-full max-w-7xl mx-auto">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={slide.id}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
-            className="max-w-3xl"
-          >
+      {/* CONTENT */}
+      <div className="relative z-20 h-full flex items-center">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-8">
+          <AnimatePresence mode="wait">
             <motion.div
+              key={slide.id}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
               variants={{
-                hidden: { opacity: 0, x: -20 },
-                visible: { opacity: 1, x: 0 },
+                visible: {
+                  transition: {
+                    staggerChildren: 0.12,
+                  },
+                },
               }}
-              className="flex items-center gap-2 mb-6"
+              className="max-w-4xl"
             >
-              <div className="w-8 h-[1px] bg-[#22EB11]" />
-              <ShieldCheck className="text-[#22EB11] w-4 h-4" />
-              <span className="text-[10px] md:text-xs tracking-[4px] text-green-400/80 uppercase font-bold">
-                {slide.tagline}
-              </span>
+              {/* Tagline */}
+              <motion.div
+                variants={{
+                  hidden: {
+                    opacity: 0,
+                    y: 20,
+                  },
+
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                  },
+                }}
+                className="flex items-center gap-3 mb-5"
+              >
+                <span className="uppercase tracking-[0.3em] text-[10px] md:text-xs text-[#1B5E20] font-semibold">
+                  {slide.tagline}
+                </span>
+              </motion.div>
+
+              {/* Heading */}
+              <motion.h1
+                variants={{
+                  hidden: {
+                    opacity: 0,
+                    y: 40,
+                  },
+
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                  },
+                }}
+                className="text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.05] text-white mb-6"
+              >
+                {splitTitle.slice(0, -1).join(" ")}{" "}
+                <span className="text-[#1B5E20]">{splitTitle.slice(-1)}</span>
+              </motion.h1>
+
+              {/* Subtitle */}
+              <motion.p
+                variants={{
+                  hidden: {
+                    opacity: 0,
+                    y: 20,
+                  },
+
+                  visible: {
+                    opacity: 0.85,
+                    y: 0,
+                  },
+                }}
+                className="text-gray-300 text-base md:text-xl leading-relaxed max-w-2xl border-l-2 border-[#22EB11]/40 pl-5 mb-10"
+              >
+                {slide.subtitle}
+              </motion.p>
+
+              {/* Buttons */}
+              <motion.div
+                variants={{
+                  hidden: {
+                    opacity: 0,
+                    y: 30,
+                  },
+
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                  },
+                }}
+                className="flex flex-col sm:flex-row gap-4"
+              >
+                <button className="px-8 md:px-10 py-4 rounded-full bg-[#1B5E20] text-white font-bold uppercase tracking-[0.2em] text-xs  transition-all duration-300">
+                  Book Your Stay
+                </button>
+
+                <button className="px-8 md:px-10 py-4 rounded-full border border-[#1B5E20] text-white font-semibold uppercase tracking-[0.2em] text-xs  transition-all duration-300">
+                  Explore Rooms
+                </button>
+              </motion.div>
             </motion.div>
-
-            <motion.h1
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              className="text-4xl md:text-7xl font-bold text-white leading-[1.1] mb-6"
-            >
-              {splitTitle.slice(0, -1).join(" ")}{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#22EB11] to-[#155111] block md:inline">
-                {splitTitle.slice(-1)}
-              </span>
-            </motion.h1>
-
-            <motion.p
-              variants={{ hidden: { opacity: 0 }, visible: { opacity: 0.8 } }}
-              className="text-gray-300 text-lg md:text-2xl mb-10 font-light leading-relaxed border-l-2 border-[#22EB11]/30 pl-6"
-            >
-              {slide.subtitle}
-            </motion.p>
-
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              className="flex gap-5"
-            >
-              <button className="px-10 py-4 rounded-sm bg-[#22EB11] text-black font-bold uppercase text-xs tracking-widest hover:bg-white transition-all duration-500 shadow-xl">
-                Book Your Suite
-              </button>
-            </motion.div>
-          </motion.div>
-        </AnimatePresence>
+          </AnimatePresence>
+        </div>
       </div>
 
-      {/* Progress Bars for Auto-scroll Visibility */}
-      <div className="absolute bottom-10 left-8 md:left-20 flex gap-3 z-20">
+      {/* Progress Bars */}
+      <div className="absolute bottom-8 left-4 md:left-8 flex gap-3 z-30">
         {slides.map((_, i) => (
           <div
             key={i}
-            className="h-1 w-16 bg-white/20 overflow-hidden rounded-full"
+            className="w-14 md:w-16 h-[3px] bg-white/20 rounded-full overflow-hidden"
           >
             {i === index && (
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: "100%" }}
-                transition={{ duration: 5, ease: "linear" }}
-                className="h-full bg-[#22EB11]"
+                transition={{
+                  duration: 7,
+                  ease: "linear",
+                }}
+                className="h-full bg-[#1B5E20]"
               />
             )}
           </div>
         ))}
       </div>
 
-      {/* Modern Minimal Navigation */}
-      <div className="absolute bottom-10 right-8 md:right-20 flex gap-4 z-20">
+      {/* Navigation */}
+      <div className="absolute bottom-8 right-4 md:right-8 flex items-center gap-3 z-30">
+        {/* Sound Toggle */}
+        <button
+          onClick={() => setMuted(!muted)}
+          className="w-11 h-11 rounded-full border border-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-300"
+        >
+          {muted ? <VolumeX size={18} /> : <Volume2 size={18} />}
+        </button>
+
+        {/* Prev */}
         <button
           onClick={prevSlide}
-          className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all"
+          className="w-11 h-11 md:w-12 md:h-12 rounded-full border border-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-300"
         >
           <ArrowLeft size={20} />
         </button>
+
+        {/* Next */}
         <button
           onClick={nextSlide}
-          className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-[#22EB11] hover:text-black hover:border-[#22EB11] transition-all"
+          className="w-11 h-11 md:w-12 md:h-12 rounded-full bg-[#1B5E20] text-white flex items-center justify-center hover:bg-white transition-all duration-300"
         >
           <ArrowRight size={20} />
         </button>
