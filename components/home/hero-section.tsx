@@ -321,7 +321,7 @@ export const HeroSection = () => {
 
   return (
     <>
-      <section className="relative w-full h-[85vh] md:h-screen overflow-hidden pt-32 md:pt-0">
+      <section className="relative w-full h-[85vh] md:h-screen overflow-hidden pt-28 md:pt-0">
         {/* Content */}
         <div className="relative z-20 h-full flex items-center">
           <div className="px-4 md:px-8 w-full">
