@@ -5,6 +5,7 @@ import Navbar from "./layout/navbar";
 import SmoothScroll from "@/components/SmoothScroll";
 import { Footer } from "./layout/footer";
 import { IntroLogo } from "./layout/IntroLogo";
+import FloatingWhatsApp from "@/components/FloatingWhatsapp";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -26,6 +27,7 @@ export default function RootLayout({
     <html lang="en" className={` ${poppins.variable} h-full antialiased`}>
       <SmoothScroll>
         <IntroLogo />
+        <FloatingWhatsApp />
         <body className="min-h-full flex flex-col font-poppins  bg-gradient-to-r from-white via-yellow-50 to-orange-50">
           <Navbar />
           {children}
