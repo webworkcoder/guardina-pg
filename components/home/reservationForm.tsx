@@ -138,7 +138,7 @@ export const ReservationForm = () => {
                     value={formData.fullName}
                     onChange={handleChange}
                     placeholder="Enter Your Full Name"
-                    className="w-full h-14 md:h-16 px-5 rounded-full bg-[#1B5E20] border border-slate-200 focus:outline-none focus:bg-white focus:border-[#1B5E20]/30 focus:ring-2 focus:ring-[#1B5E20]/5 transition-all text-white focus:text-slate-700 placeholder:text-white"
+                    className="w-full h-14 md:h-16 px-5 rounded-full bg-[#F8FAFC] border border-slate-200 focus:outline-none focus:bg-white focus:border-[#1B5E20]/30 focus:ring-2 focus:ring-[#1B5E20]/5 transition-all text-white focus:text-slate-700 placeholder:text-slate-400"
                   />
                 </div>
 
@@ -155,7 +155,7 @@ export const ReservationForm = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="Enter Your Contact Number"
-                    className="w-full h-14 md:h-16 px-5 rounded-full bg-[#1B5E20] border border-slate-200 focus:outline-none focus:bg-white focus:border-[#1B5E20]/30 focus:ring-2 focus:ring-[#1B5E20]/5 transition-all text-white focus:text-slate-700 placeholder:text-white"
+                    className="w-full h-14 md:h-16 px-5 rounded-full bg-[#F8FAFC] border border-slate-200 focus:outline-none focus:bg-white focus:border-[#1B5E20]/30 focus:ring-2 focus:ring-[#1B5E20]/5 transition-all text-white focus:text-slate-700 placeholder:text-slate-400"
                   />
                 </div>
 
@@ -172,7 +172,7 @@ export const ReservationForm = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="Enter Your Email Address"
-                    className="w-full h-14 md:h-16 px-5 rounded-full bg-[#1B5E20] border border-slate-200 focus:outline-none focus:bg-white focus:border-[#1B5E20]/30 focus:ring-2 focus:ring-[#1B5E20]/5 transition-all text-white focus:text-slate-700 placeholder:text-white"
+                    className="w-full h-14 md:h-16 px-5 rounded-full bg-[#F8FAFC] border border-slate-200 focus:outline-none focus:bg-white focus:border-[#1B5E20]/30 focus:ring-2 focus:ring-[#1B5E20]/5 transition-all text-white focus:text-slate-700 placeholder:text-slate-400"
                   />
                 </div>
 

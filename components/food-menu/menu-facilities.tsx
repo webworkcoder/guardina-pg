@@ -1,8 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Utensils, Waves, Wifi, Sparkles, Car, Dumbbell } from "lucide-react";
 import { FacilityCard } from "../shared/FacilityCard";
-import FeatureBar from "../shared/FeatureBar";
 
 export const MenuFacilities = () => {
   // Default 0 index active rahega

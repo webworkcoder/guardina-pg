@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function FloatingWhatsApp() {
   return (
@@ -52,7 +52,7 @@ export default function FloatingWhatsApp() {
           </span>
 
           {/* Icon */}
-          <MessageCircle
+          <FaWhatsapp
             size={30}
             className="relative z-10 text-white drop-shadow-lg"
           />
@@ -60,7 +60,7 @@ export default function FloatingWhatsApp() {
       </motion.div>
 
       {/* Tooltip */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.5 }}
@@ -69,7 +69,7 @@ export default function FloatingWhatsApp() {
         <div className="px-4 py-2 rounded-xl bg-white shadow-2xl border border-gray-200 text-sm font-medium text-gray-700 whitespace-nowrap">
           Chat with us 👋
         </div>
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 }

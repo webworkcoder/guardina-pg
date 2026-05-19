@@ -3,13 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  UtensilsCrossed,
-  Clock,
-  Info,
-  CalendarDays,
-  Scale,
-} from "lucide-react";
+import { UtensilsCrossed, Clock, Info, CalendarDays } from "lucide-react";
 import FeatureBar from "../shared/FeatureBar";
 
 export const Menu = () => {
@@ -53,7 +47,7 @@ export const Menu = () => {
     },
     Saturday: {
       breakfast: "Puri, Sabji",
-      lunch: "Kheechi, Chokha, Papad, Pickle",
+      lunch: "Kheechri, Chokha, Papad, Pickle",
       dinner: "Matar Paneer, Roti",
     },
     Sunday: {
@@ -63,10 +57,63 @@ export const Menu = () => {
     },
   };
 
-  const mealImages = {
-    breakfast: "/menu.avif",
-    lunch: "/menu.avif",
-    dinner: "/menu.avif",
+  const mealImages: any = {
+    Monday: {
+      breakfast:
+        "https://images.unsplash.com/photo-1596450512748-2dae774fc38a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8UHVyaSUyMFNhYmppfGVufDB8fDB8fHww",
+      lunch:
+        "https://images.unsplash.com/photo-1764315197254-94385571df22?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8RWdnJTIwQ3VycnklMkMlMjBDaGF3YWx8ZW58MHx8MHx8fDA%3D",
+      dinner:
+        "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&q=80&w=600", // Dal Tadka Roti
+    },
+    Tuesday: {
+      breakfast:
+        "https://images.unsplash.com/photo-1601387434127-20979856e76e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzR8fFNhZGElMjBSb3RpJTJDJTIwU2Fiaml8ZW58MHx8MHx8fDA%3D",
+      lunch:
+        "https://images.unsplash.com/photo-1575526854473-e85fdba07b7a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fGZvb2QlMjBEYWwlMjBDaGF3YWwlMjB0aGFsaXxlbnwwfHwwfHx8MA",
+      dinner:
+        "https://images.unsplash.com/photo-1643892467625-65df6a500524?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8U2F0dHUlMkMlMjBQdXJpJTJDJTIwQ2h1dG5leXxlbnwwfHwwfHx8MA%3D%3D",
+    },
+    Wednesday: {
+      breakfast:
+        "https://images.unsplash.com/photo-1722239312666-84328fce4c6f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fFBsYWluJTIwUGFyYXRoYSUyQyUyMENoYW5hJTIwTWFzYWxhfGVufDB8fDB8fHww",
+      lunch:
+        "https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Q2hpY2tlbiUyQyUyMENoYXdhbHxlbnwwfHwwfHx8MA%3D%3D",
+      dinner:
+        "https://images.unsplash.com/photo-1591266123515-46149ea0b0a9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fFBsYWluJTIwUm90aXxlbnwwfHwwfHx8MA%3D%3D",
+    },
+    Thursday: {
+      breakfast:
+        "https://images.unsplash.com/photo-1596450512748-2dae774fc38a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8UHVyaSUyMFNhYmppfGVufDB8fDB8fHww",
+      lunch:
+        "https://images.unsplash.com/photo-1737266320454-01473449e4f3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fENoYXdhbCUyQyUyMEN1cnJ5JTJDfGVufDB8fDB8fHww",
+      dinner:
+        "https://images.unsplash.com/photo-1588461123433-6e389a38b54a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fG1pbGslMjByaWNlfGVufDB8fDB8fHww",
+    },
+    Friday: {
+      breakfast:
+        "https://images.unsplash.com/photo-1599232288126-7dbd2127db14?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8U2FkYSUyMFJvdGl8ZW58MHx8MHx8fDA%3D",
+      lunch:
+        "https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmljZSUyMGZvb2R8ZW58MHx8MHx8fDA%3D",
+      dinner:
+        "https://images.unsplash.com/photo-1661588669110-81142a5b9e57?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8RWdnJTIwQ3VycnklMkMlMjBSb3RpfGVufDB8fDB8fHww",
+    },
+    Saturday: {
+      breakfast:
+        "https://images.unsplash.com/photo-1596450512748-2dae774fc38a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8UHVyaSUyMFNhYmppfGVufDB8fDB8fHww",
+      lunch:
+        "https://images.unsplash.com/photo-1609570324378-ec0c4c9b6ba8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWl4ZWQlMjBmcmllZCUyMHJpY2UlMjBmb29kfGVufDB8fDB8fHww",
+      dinner:
+        "https://images.unsplash.com/photo-1551881192-002e02ad3d87?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBhbmVlcnxlbnwwfHwwfHx8MA%3D%3D",
+    },
+    Sunday: {
+      breakfast:
+        "https://images.unsplash.com/photo-1708782343717-be4ea260249a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8QWFsb28lMjBQYXJhdGhhJTJDJTIwQ2h1dG5leXxlbnwwfHwwfHx8MA%3D%3D",
+      lunch:
+        "https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&q=80&w=600", // Jeera Rice Dal Tadka
+      dinner:
+        "https://images.unsplash.com/photo-1600935926387-12d9b03066f0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fFNhYmppJTJDJTIwUm90aXxlbnwwfHwwfHx8MA%3D%3D",
+    },
   };
 
   return (
@@ -125,7 +172,7 @@ export const Menu = () => {
                 type="Breakfast"
                 menu={weeklyMenu[activeDay].breakfast}
                 time="07:00 AM - 09:00 AM"
-                image={mealImages.breakfast}
+                image={mealImages[activeDay].breakfast}
                 quantity={
                   activeDay === "Sunday"
                     ? "2 pics."
@@ -138,7 +185,7 @@ export const Menu = () => {
                 type="Lunch"
                 menu={weeklyMenu[activeDay].lunch}
                 time="01:00 PM - 03:00 PM"
-                image={mealImages.lunch}
+                image={mealImages[activeDay].lunch}
                 quantity={
                   activeDay === "Wednesday" || activeDay === "Monday"
                     ? "2 pics. (Chicken/Egg)"
@@ -149,7 +196,7 @@ export const Menu = () => {
                 type="Dinner"
                 menu={weeklyMenu[activeDay].dinner}
                 time="07:30 PM - 09:30 PM"
-                image={mealImages.dinner}
+                image={mealImages[activeDay].dinner}
                 quantity={
                   activeDay === "Tuesday"
                     ? "8 pics. (Sattoo Puri)"
