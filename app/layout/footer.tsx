@@ -87,6 +87,14 @@ export const Footer = () => {
               </li>
               <li>
                 <Link
+                  href="/gallery"
+                  className="hover:text-[#E6AC6F] transition-colors"
+                >
+                  Gallery
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/food-menu"
                   className="hover:text-[#E6AC6F] transition-colors"
                 >
