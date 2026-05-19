@@ -57,7 +57,6 @@ const Navbar = () => {
   const router = useRouter();
 
   const handleBookNow = () => {
-    // If already on homepage → smooth scroll
     if (pathname === "/") {
       const section = document.getElementById("contact");
 
@@ -68,7 +67,6 @@ const Navbar = () => {
         });
       }
     } else {
-      // If on another page → navigate to homepage contact section
       router.push("/#contact");
     }
 
@@ -88,17 +86,17 @@ const Navbar = () => {
         </motion.div>
       </Link>
 
-      {/* Desktop Menu */}
+      {/* Desktop Menu - Fixed Layout Shifting on Hover */}
       <div className="hidden lg:flex items-center gap-6">
         {data.map((item) => (
           <motion.div
             key={item.id}
-            whileHover={{ y: -2 }}
-            transition={{ type: "spring", stiffness: 300 }}
+            whileHover={{ scale: 1.02 }} // y: -2 hata kar mild scale lagaya, layout hilna band
+            transition={{ duration: 0.2 }}
           >
             <Link
               href={item.path}
-              className={`transition ${
+              className={`transition-colors duration-300 block py-1 ${
                 pathname === item.path
                   ? "text-[#13540c] font-semibold"
                   : "text-gray-800 hover:text-[#13540c]"
@@ -134,12 +132,23 @@ const Navbar = () => {
         </motion.button>
       </div>
 
-      {/* Mobile Icon */}
-      <Menu
-        size={26}
-        className="lg:hidden cursor-pointer"
-        onClick={() => setOpen(true)}
-      />
+      {/* Mobile Icon & Compact Button Setup */}
+      <div className="flex items-center gap-2 lg:hidden">
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={handleCallNow}
+          className="px-4 py-1.5 md:px-6 md:py-2 rounded-full border border-[#1B5E20] text-[#1B5E20] text-sm md:text-base font-semibold shadow-sm cursor-pointer flex items-center gap-2 hover:bg-[#1B5E20] hover:text-white transition-all"
+        >
+          <Phone size={16} />
+          Call Now
+        </motion.button>
+        <Menu
+          size={26}
+          className="cursor-pointer text-gray-800 hover:text-[#1B5E20] transition-colors"
+          onClick={() => setOpen(true)}
+        />
+      </div>
 
       {/* Mobile Drawer */}
       <AnimatePresence>
