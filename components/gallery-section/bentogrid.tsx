@@ -267,18 +267,31 @@ export const BentoGrid = () => {
       <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-[#1B5E20]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto space-y-16 relative z-10">
-        <div className="text-center space-y-4">
-          <span className="text-[#1B5E20] uppercase tracking-[0.4em] font-bold text-xs bg-[#1B5E20]/10 px-4 py-1.5 rounded-full inline-block">
-            Our Spaces
-          </span>
-          <h2 className="text-4xl md:text-6xl font-serif text-slate-900 leading-tight">
-            Explore{" "}
-            <span className="text-[#1B5E20]">Premium Living</span>
+        <div className="text-center mb-12 md:mb-20 space-y-4">
+          <div className="flex flex-col items-center gap-2">
+            <div className="text-[#1B5E20]">
+              <svg
+                width="60"
+                height="20"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="currentColor"
+              >
+                <path
+                  d="M8 0L9.79611 6.20389L16 8L9.79611 9.79611L8 16L6.20389 9.79611L0 8L6.20389 6.20389L8 0Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+            <span className="text-[#1B5E20] uppercase tracking-[0.4em] font-bold text-xs md:text-sm">
+              Gallery Section
+            </span>
+          </div>
+          <h2 className="text-3xl md:text-6xl font-serif text-[#1A1A1A] max-w-3xl mx-auto leading-tight">
+            Premium Resident Spaces &{" "}
+            <span className="text-[#1B5E20]">Living Experience</span>
           </h2>
-          <p className="text-slate-500 max-w-md mx-auto text-sm md:text-base">
-            Take a virtual tour of our premium resident rooms, modern spaces,
-            and comfort-driven residential designs.
-          </p>
         </div>
 
         {/* Bento Grid Layout Configuration */}
